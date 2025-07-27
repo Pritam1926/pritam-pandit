@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero-section {
+            background: url('./img/teach-back.jpg') no-repeat center center/cover;
+            padding: 40px;
+            position: relative;
+            color: #0f172a;
+            margin-left: 300px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(3px);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 600px;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero-content h1 span {
+            color: #0a58ca;
+        }
+
+        .subheading {
+            font-size: 18px;
+            margin: 16px 0;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #3e4b5e;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .whatsapp {
+            display: flex;
+            align-items: center;
+            background-color: #e0f7e9;
+            color: #16a34a;
+            padding: 10px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .visit-button {
+            background-color: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .visit-button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* subject offers------------- */
+        .subjects-section,
+        .why-learn-section,
+        .announcement-section {
+            margin-left: 300px;
+            padding: 40px;
+
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #149ddd;
+            display: inline-block;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .subject-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .subject-card .icon {
+            font-size: 20px;
+            margin-bottom: 12px;
+            background-color: #eef2ff;
+            color: #2563eb;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .subject-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 8px 0;
+        }
+
+        .subject-card p {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .view {
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            margin-top: 40px;
+            background-color: #149ddd;
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #fff;
+            transition: all .3s ease;
+        }
+
+        /* servicess------------- */
+        .services-sec,
+        .testimonial-section {
+            margin-left: 300px;
+            padding: 40px;
+            background-color: #f4fafd;
+        }
+
+        /* why learn------------------- */
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0a58ca;
+            margin-bottom: 8px;
+        }
+
+        .stat-card p {
+            font-size: 14px;
+            color: #6b7280;
+            /* gray-500 */
+        }
+
+        /* testimology--------- */
+
+        .carousel-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .card {
+            flex-shrink: 0;
+            max-width: 320px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #0f172a;
+        }
+
+        .card .sub {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        .nav-btn.left {
+            left: 0;
+        }
+
+        .nav-btn.right {
+            right: 0;
+        }
+
+        /* announcement------------- */
+
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            /* max-width: 1200px; */
+            margin: 0 auto;
+        }
+
+        .announcement-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-5px);
+        }
+        .announcement-card img{
+            width: 100%;
+            aspect-ratio: 4/2;
+            object-fit: fill;
+        }
+        .announcement-card .date {
+            padding: 10px;
+            color: #2b6fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .announcement-card h3 {
+            padding: 0 0 0 10px;
+            font-size: 18px;
+            color: #111;
+        }
+
+        .announcement-card .line {
+            padding: 10px 10px 0 10px;
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .announcement-card .btn {
+            margin: 10px;
+            display: block;
+            text-align: center;
+            padding: 10px 18px;
+            background: #2b6fff;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .announcement-card .btn:hover {
+            background: #1f4ecf;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="include-header"></div>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Guiding Futures with <span>ZodeTech</span></h1>
+                <p class="subheading">
+                    Learn, grow, and succeed with personalized tuition, live sessions & expert mentorship.
+                </p>
+                <p class="description">
+                    With over 3 years of dedicated teaching experience, I've helped hundreds of BCA/B.Tech students
+                    master programming and technology. Through ZodeTech, we provide comprehensive learning resources and
+                    personalized guidance to ensure your success.
+                </p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/9134331164" class="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>9134331164
+                    </a>
+                    <a href="https://zodetech.in" class="visit-button">Visit ZodeTech →</a>
+                </div>
+            </div>
+            <div class="hero-bg"></div>
+        </section>
+
+        <section class="subjects-section">
+            <h2 class="section-title">Subjects Offered</h2>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-c"></i></div>
+                    <h3>C Programming</h3>
+                    <p>Master fundamental concepts and problem-solving</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-object-group"></i></div>
+                    <h3>C++</h3>
+                    <p>Object-oriented programming and STL</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-brands fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>Modern programming with real-world applications</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-brands fa-java"></i></div>
+                    <h3>Java</h3>
+                    <p>Enterprise-level development skills</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>DBMS & SQL</h3>
+                    <p>Database design and management</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, and modern web technologies</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-hexagon-nodes-bolt"></i></div>
+                    <h3>DSA</h3>
+                    <p>Data Structures and Algorithms</p>
+                </div>
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Networking</h3>
+                    <p>Computer networks and protocols</p>
+                </div>
+            </div>
+            <a href="zodetech.html" class="view">View All <i class="fa-solid fa-arrow-right-long"></i></a>
+        </section>
+
+        <section class="services-sec">
+            <h2 class="section-title">Our Services</h2>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <h3>Semester-wise Tuition</h3>
+                    <p>Comprehensive coverage of BCA/B.Tech curriculum with practical assignments and exam preparation.
+                    </p>
+                </div>
+
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Crash Courses</h3>
+                    <p>Intensive learning programs designed to quickly master specific technologies or concepts.</p>
+                </div>
+
+                <div class="subject-card">
+                    <div class="icon"><i class="fa-solid fa-compass"></i></div>
+                    <h3>Career Guidance</h3>
+                    <p>Professional mentorship to help you navigate your tech career path and opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-learn-section">
+            <h2 class="section-title">Why Learn With Me?</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>3+</h3>
+                    <p>Years Teaching Experience</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <p>Students Taught</p>
+                </div>
+                <div class="stat-card">
+                    <h3>95%</h3>
+                    <p>Success Rate</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <h2 class="section-title">Student Testimonials</h2>
+            <div class="carousel-container">
+                <!-- <button class="nav-btn left" onclick="scrollLeft()">&#8592;</button> -->
+
+               <!-- <div class="carousel" id="testimonialCarousel">
+                    <div class="card">
+                        <h3>Rahul Sharma</h3>
+                        <p class="sub">BCA Final Year</p>
+                        <p>"The personalized attention and practical approach to teaching helped me master complex
+                            programming concepts easily."</p>
+                    </div>
+                    <div class="card">
+                        <h3>Priya Patel</h3>
+                        <p class="sub">B.Tech CSE</p>
+                        <p>"Excellent teaching methodology with real-world examples made learning DSA much more
+                            interesting and practical."</p>
+                    </div>
+                    <div class="card">
+                        <h3>Amit Kumar</h3>
+                        <p class="sub">BCA Second Year</p>
+                        <p>"The crash courses are incredibly well-structured and helped me catch up with my semester
+                            syllabus effectively."</p>
+                    </div>
+                    
+                </div>
+
+                <button class="na-btn right" onclick="scrollRight()">&#8594;</button> -->
+                <p>No Testimonials</p>
+            </div>
+        </section>
+
+        <section class="announcement-section">
+            <h2 class="section-title">Latest Announcements</h2>
+            <div class="announcement-grid">
+
+                <!-- <div class="announcement-card">
+                    <img src="./img/pro1.png" alt="">
+                    <p class="date">Starting July 30, 2025</p>
+                    <h3>Python Bootcamp</h3>
+                    <p class="line">Intensive 4-week program covering Python fundamentals to advanced concepts.</p>
+                    <a href="#" class="btn">Register Now</a>
+                </div> -->
+
+                <p>No Announcements</p>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+
+    </main>
+    <div id="include-footer"></div>
+
+    <script src="include.js"></script>
+
+</body>
+
+</html>

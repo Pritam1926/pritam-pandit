@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .achiev-hero {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .achiev-hero h1 {
+            font-size: 32px;
+            color: #111827;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #555;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto 30px;
+        }
+
+        .tab-container {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .tab-button {
+            padding: 15px 30px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-button.active {
+            background: #eaf1ff;
+            color: #2459e0;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* internship card----------- */
+        .internship-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon {
+            background: #eaf0ff;
+            padding: 10px;
+            border-radius: 10px;
+            color: #3a7bfc;
+            font-size: 20px;
+        }
+
+        .card-header h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .card-header .role {
+            margin: 2px 0 0;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .status {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 6px 12px;
+            font-size: 13px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .tags span {
+            background: #f3f4f6;
+            padding: 6px 12px;
+            font-size: 13px;
+            border-radius: 12px;
+            color: #374151;
+        }
+
+        .key-learnings {
+            margin-top: 15px;
+        }
+
+        .key-learnings ul {
+            padding-left: 20px;
+            margin: 8px 0 0;
+            list-style: none;
+        }
+
+        .key-learnings li {
+            margin-bottom: 6px;
+            color: #374151;
+            position: relative;
+            font-size: 14px;
+        }
+
+        .key-learnings li::before {
+            content: '✔';
+            color: #10b981;
+            font-size: 14px;
+            position: absolute;
+            left: -20px;
+            top: 0;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .download-btn .btn {
+            display: inline-block;
+            background: #3a7bfc;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn .btn i {
+            margin-right: 8px;
+        }
+
+        .download-btn .btn:hover {
+            background: #2563eb;
+        }
+
+        /* research paper------------- */
+        .research-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon {
+            background: #eaf0ff;
+            padding: 12px;
+            border-radius: 12px;
+            color: #3a7bfc;
+            font-size: 20px;
+        }
+
+        .award {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .research-card h3 {
+            font-size: 18px;
+            margin: 16px 0 6px;
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .type {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+
+        .type i {
+            margin-right: 6px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .tags span {
+            background: #f3f4f6;
+            color: #374151;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 12px;
+        }
+
+        .description {
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #3a7bfc;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary i {
+            margin-right: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-secondary i {
+            margin-right: 8px;
+        }
+
+        /* workshop------------ */
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .icons {
+            font-size: 18px;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .workshop .icons {
+            background-color: #c1d5fc;
+            color: #0440c3;
+        }
+
+        .seminar .icons {
+            background-color: #cbf9ea;
+            color: #065f46;
+        }
+
+        .webinar .icons {
+            background-color: #dccbfa;
+            color: #4b09be;
+        }
+
+        .course .icons {
+            background-color: #fbdbb1;
+            color: #ff9100;
+        }
+
+        .tag {
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .workshop .tag {
+            background-image: linear-gradient(135deg, #2563eb, #0440c3);
+        }
+
+        .seminar .tag {
+            background-image: linear-gradient(135deg, #10b981, #059062);
+        }
+
+        .webinar .tag {
+            background-image: linear-gradient(135deg, #7c3aed, #4b09be);
+        }
+
+        .course .tag {
+            background-image: linear-gradient(135deg, #ffa600, #ff9100);
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin: 8px 0;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .org,
+        .date {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .desc {
+            font-size: 13px;
+            margin: 12px 0;
+            color: #374151;
+            text-align: justify;
+        }
+
+        .btn {
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="include-header"></div>
+    <main>
+        <section class="achiev-hero">
+            <h1>Achievements</h1>
+            <p class="subtitle">A comprehensive overview of my professional journey, research contributions, and
+                continuous learning experiences</p>
+
+            <div class="tab-container">
+                <button class="tab-button active" onclick="showTab('internship')">Internships</button>
+                <button class="tab-button" onclick="showTab('research')">Research Papers</button>
+                <button class="tab-button" onclick="showTab('workshop')">Workshops</button>
+            </div>
+
+            <div id="internship" class="tab-content active">
+                <div class="internship-card">
+                    <div class="card-header">
+                        <div class="icon-title">
+                            <div class="icon"><i class="fas fa-building"></i></div>
+                            <div>
+                                <h3>WEBEL-FUJISOFT-VARA</h3>
+                                <p class="role">Data Analytics Intern</p>
+                            </div>
+                        </div>
+                        <span class="status">Completed</span>
+                    </div>
+
+                    <div class="tags">
+                        <span>1 Month</span>
+                        <span>July 2024</span>
+                        <span>BCA Final Year</span>
+                    </div>
+
+                    <div class="key-learnings">
+                        <strong>Key Learnings:</strong>
+                        <ul>
+                            <li>Advanced data visualization techniques using Tableau and Power BI</li>
+                            <li>Statistical analysis and predictive modeling with Python</li>
+                            <li>Database management and SQL optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="download-btn">
+                        <a href="./img/internship-DA.pdf" class="btn" target="_blank">
+                            <i class="fas fa-download"></i> Download Certificate
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="research" class="tab-content">
+                <div class="research-card">
+                    <div class="card-header">
+                        <div class="icon"><i class="fas fa-file-alt"></i></div>
+                        <span class="award">Pending</span>
+                    </div>
+
+                    <h3>Cybersecurity in the age of AI : Attack and Prevent</h3>
+                    <p class="type"><i class="fa-solid fa-people-group"></i> Team Research (2 Authors)</p>
+
+                    <div class="tags">
+                        <span>FOSET Conference</span>
+                        <span>March 2023</span>
+                        <span>AI in CyberSecurity</span>
+                    </div>
+
+                    <p class="description">
+                        This paper explores how artificial intelligence is both a tool and a target in the evolving
+                        cybersecurity landscape. It analyzes modern AI-driven cyberattacks and presents countermeasures
+                        leveraging AI for threat detection, prevention, and adaptive security systems.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="./img/CyberSecurity in the age of AI(ajac).pdf" class="btn-primary" target="_blank"><i
+                                class="fas fa-book-open"></i> View Paper</a>
+                        <a href="./img/FOSET.pdf" class="btn-secondary" target="_blank"><i class="fas fa-download"></i>
+                            Certificate</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="workshop" class="tab-content">
+                <div class="cards-container">
+
+                    <div class="card">
+                        <div class="card-header workshop">
+                            <span class="icons"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <span class="tag">Workshop</span>
+                        </div>
+                        <h3>PYTHON WORKSHOP</h3>
+                        <p class="org">Organized by: KSHITIJ 2024,IIT KHARAGPUR</p>
+                        <p class="date">Jan 20-21, 2024</p>
+                        <p class="desc">"An interactive workshop focused on the fundamentals of Python programming,
+                            covering data types, control structures, functions, and real-world problem-solving through
+                            hands-on coding exercises."</p>
+                        <a href="./img/python-workshop.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header course">
+                            <span class="icons"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="tag">Course</span>
+                        </div>
+                        <h3>Data Analysis with Python</h3>
+                        <p class="org">MachineLearning.org.in</p>
+                        <p class="date">Dec 24, 2023</p>
+                        <p class="desc">"Completed a course on Data Analysis with Python, focusing on data wrangling,
+                            visualization, and statistical analysis using libraries like Pandas, NumPy, and Matplotlib."
+                        </p>
+                        <a href="./img/DA-Python.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header workshop">
+                            <span class="icons"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <span class="tag">Workshop</span>
+                        </div>
+                        <h3>Cyber Security Workshop</h3>
+                        <p class="org">Organized by: Digi Samurai</p>
+                        <p class="date">Oct 01, 2023</p>
+                        <p class="desc">"Participated in a hands-on workshop on Cybersecurity, exploring essential
+                            topics like ethical hacking, network security, and best practices for protecting digital
+                            infrastructure."</p>
+                        <a href="./img/Digi Samurai.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header course">
+                            <span class="icons"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="tag">Course</span>
+                        </div>
+                        <h3>HTML, CSS, and Javascript for Web Developers</h3>
+                        <p class="org">Coursera (Johns Hopkins University)</p>
+                        <p class="date">July 07 - Aug 21, 2023</p>
+                        <p class="desc">"Completed a comprehensive Coursera course on Front-End Web Development,
+                            covering the fundamentals of HTML, CSS, and JavaScript. Gained hands-on experience in
+                            building responsive and interactive user interfaces."</p>
+                        <a href="./img/Coursera-webDev.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header webinar">
+                            <span class="icons"><i class="fa-solid fa-desktop"></i></span>
+                            <span class="tag">Webinar</span>
+                        </div>
+                        <h3>BIOINFESTO-2023</h3>
+                        <p class="org">Organized by: Department of Bioinformatics, MAKAUT</p>
+                        <p class="date">Aug 12 & 13, 2023</p>
+                        <p class="desc">"Focused on emerging trends in bioinformatics, including genomics, data
+                            analysis, and
+                            computational biology. The session aimed to bridge interdisciplinary research and real-world
+                            applications in life sciences."</p>
+                        <a href="./img/BIOINFESTO.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header webinar">
+                            <span class="icons"><i class="fa-solid fa-desktop"></i></span>
+                            <span class="tag">Webinar</span>
+                        </div>
+                        <h3>Innovation / Prototype Validation - Converting Innovation into a Startup</h3>
+                        <p class="org">Organized by: IIC CELL & EKTA Incubation Center, MAKAUT</p>
+                        <p class="date">July 22, 2023</p>
+                        <p class="desc">"Participated in a workshop focused on transforming innovative ideas into viable
+                            startup ventures. Covered key aspects such as prototype validation, business model
+                            development, and the entrepreneurial journey from concept to launch."</p>
+                        <a href="./img/start-up webinar.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header seminar">
+                            <span class="icons"><i class="fa-solid fa-person-chalkboard"></i></span>
+                            <span class="tag">Seminar</span>
+                        </div>
+                        <h3>IP Awareness/Training program</h3>
+                        <p class="org">Organized by: Intellectual Property Office, India</p>
+                        <p class="date">July 13, 2023</p>
+                        <p class="desc">"Attended an IP (Intellectual Property) Awareness/Training Program focusing on
+                            the fundamentals of patents, copyrights, and trademarks, aimed at promoting innovation and
+                            understanding legal protections for creative works."</p>
+                        <a href="./img/IPR_EVENT.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header webinar">
+                            <span class="icons"><i class="fa-solid fa-desktop"></i></span>
+                            <span class="tag">Webinar</span>
+                        </div>
+                        <h3>DATA SCIENCE</h3>
+                        <p class="org">Organized by: Department of CS, GCST</p>
+                        <p class="date">Jan 04, 2023</p>
+                        <p class="desc">"Attended a webinar on Data Science that covered core concepts like data
+                            preprocessing, model building, and industry use cases, offering valuable insights into
+                            real-world applications of data science."</p>
+                        <a href="./img/Data science.pdf" class="btn" target="_blank">Download Certificate</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+    <div id="include-footer"></div>
+
+    <script src="include.js"></script>
+</body>
+
+</html>

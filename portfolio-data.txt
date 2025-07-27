@@ -1,0 +1,98 @@
+home, about, contact, projects, Achievement, resume, Services, Social, teaching, blog
+
+Header:
+--------------------------|
+left side fixed aside bar, 1st img circle center, name, social account, nav lists.
+
+Home:
+--------------------------|
+### 🟢 1. **Hero Section** *(100vh height, fullscreen)*
+
+* **Big Name Heading** (e.g., *“Hi, I'm Bablu”*)
+* **Typewriter effect** under name:
+  *Developer | Mentor | Content Creator | Career Guide*
+* **Short Bio (2–3 lines):**
+  *“A tech enthusiast with a BCA background, passionate about building scalable web apps, guiding tech learners, and creating digital content.”*
+* **CTA Buttons:**
+
+  * View Projects
+  * Contact Me
+  * Download Resume
+
+🟩 **Design Notes:**
+
+* Full screen section (use `height: 100vh`)
+* Center-aligned
+* Light background
+* Smooth scroll hint (optional arrow)
+
+---
+
+### 🟦 2. **Education Background**
+
+* **Heading:** “Education”
+* **Line below heading** (as you said)
+* **Content:**
+
+  * **Secondary (2020):** 74.8% – WB Board
+  * **Higher Secondary (2022):** 86.6% – WB Board
+  * **BCA (2022–2025):** Global College of Science & Tech (CGPA: 8.7) – MAKAUT
+  * Highlight: Top 3 in every semester, internship at Webel, Python workshop at IIT-KGP
+
+---
+
+### 🟩 3. **Featured Project**
+
+* Heading: “Latest Project”
+* One project card with:
+
+  * Title
+  * Short description
+  * Tech stack
+  * GitHub & Live link
+  * Image thumbnail
+
+(From Projects page)
+
+---
+
+### 🟨 4. **Skills & Languages**
+
+* Heading: “Skills & Tools”
+* Tech icons grid:
+
+  * HTML, CSS, JS, PHP, MySQL, Java, Python, Power BI, C, C++
+* Languages known:
+
+  * Bengali (Native), Hindi, English
+
+(Use badge style or flag icons optionally)
+
+---
+
+### 🟧 5. **Achievements**
+
+* Heading: “Achievements”
+* Bullet-style or grid:
+
+  * Internship @ Webel
+  * Python Workshop @ IIT KGP
+  * Certifications (webinars, seminars)
+  * Topper in all semesters
+  * Paper presentations (optional to list titles)
+
+---
+
+### 🟥 6. **Services Overview**
+
+* Heading: “Services”
+* 2–4 cards:
+
+  * 📘 Tuition: C, Java, DSA, BCA students
+  * 🎤 Mentorship: Career guidance
+  * 🖥️ Web development: Static websites
+  * 🎬 Content Creation: Tech vlogs, tutorials
+
+Each with 1-line description
+
+

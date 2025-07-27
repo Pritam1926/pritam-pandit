@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .project-hero {
+            margin-left: 300px;
+            padding: 40px;
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .project-hero p {
+            font-size: 14px;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        /* project cards------------ */
+        .project-showcase {
+            margin-left: 300px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .project-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card img {
+            max-width: 450px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .project-details {
+            padding: 15px;
+            /* text-align: justify; */
+        }
+
+        .project-details h3 {
+            font-size: 15px;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .project-details .type {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 6px 10px;
+            display: inline-block;
+            background-color: #3c77df;
+            color: #fff;
+            border-radius: 10px;
+        }
+
+        .project-details .team {
+            color: #6b7280;
+            font-size: 11px;
+        }
+
+        .project-details .purpose {
+            font-size: 12px;
+            color: #111827;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .project-details .description {
+            font-size: 12px;
+            color: #363940;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .project-details ul {
+            font-size: 12px;
+            color: #363940;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-details h4 {
+            color: #111827;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+
+        .project-details .tech-stack {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .tech-stack span {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: 500;
+        }
+
+        .html {
+            background-image: linear-gradient(135deg, #f06529, #e34c26);
+            color: #fff;
+        }
+
+        .css {
+            background-image: linear-gradient(135deg, #2965f1, #264de4);
+            color: #fff;
+        }
+
+        .js {
+            background-image: linear-gradient(135deg, #f0db4f, #eacb00);
+        }
+
+        .php {
+            background-image: linear-gradient(135deg, #787CB5, #474A8A);
+            color: #fff;
+        }
+
+        .mysql {
+            background-image: linear-gradient(90deg, #F29111, #00758F);
+            color: #fff;
+        }
+
+        .responsibility {
+            color: #363940;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .outcome {
+            font-size: 12px;
+            color: #363940;
+            margin-top: 5px;
+        }
+
+        .repo {
+            text-decoration: none;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 10px;
+            background-color: #2965f1;
+            font-size: 14px;
+            transition: all .3s ease;
+        }
+
+        .repo:hover {
+            background-color: #264de4;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="include-header"></div>
+    <main>
+        <section class="project-hero">
+            <h1>My Projects</h1>
+            <p>A collection of projects showcasing my journey in web development, from concept to deployment</p>
+        </section>
+
+        <section class="project-showcase">
+            <div class="project-card">
+                <img src="./img/pro1.png" alt="project-img">
+                <div class="project-details">
+                    <h3>Online Dr Appointment Booking System <span class="type">BCA Major</span></h3>
+
+                    <span class="team"><i class="fa-solid fa-calendar"></i> March 2025 - May 2025</span> <br>
+
+                    <span class="team"><i class="fa-solid fa-people-line"></i> Team of 5: Pritam Pandit, Tanisha
+                        Chakraborty, Roumik Das, Deep Choudhury, Manab Chanda</span>
+
+                    <p class="purpose">Purpose: The goal was
+                        to simplify and digitize the healthcare appointment process for better accessibility.</p>
+
+                    <p class="description">The platform was developed with a focus on simplicity, security, and
+                        scalability, making it ideal for clinics, small hospitals, or solo practitioners aiming to go
+                        digital. <br>
+                        This web-based application allows patients to:
+                    <ul>
+                        <li>Search for doctors using filters like location, specialization, availability....</li>
+                        <li>View detailed profiles of doctors before booking.</li>
+                        <li>Book appointments instantly with confirmation via email.</li>
+                        <li>Manage their bookings, reschedule or cancel easily.</li>
+                    </ul>
+                    <p class="description">Doctors, on the other hand, can:</p>
+                    <ul>
+                        <li>Set their availability schedule.</li>
+                        <li>Accept or reject appointments.</li>
+                        <li>Manage patient records and track appointments.</li>
+                    </ul>
+                    </p>
+
+                    <h4>
+                        <> Tech Stack
+                    </h4>
+                    <div class="tech-stack">
+                        <span class="html">HTML</span>
+                        <span class="css">CSS</span>
+                        <span class="js">JavaScript</span>
+                        <span class="php">PHP</span>
+                        <span class="mysql">MySQL</span>
+                    </div>
+
+                    <h4>Role & Contribution</h4>
+                    <p class="responsibility">
+                        I worked as a Backend Developer and Security Lead in this project. My key responsibilities
+                        included:
+                    <ul>
+                        <li>Designing and building the backend architecture for smooth data flow.</li>
+                        <li>Implementing authentication and authorization to secure both patient and doctor data.</li>
+                        <li>Ensuring data encryption and protection of personal health information.</li>
+                        <li>Working with the database for efficient appointment management and doctor-patient linking.
+                        </li>
+                    </ul>
+                    </p>
+
+                    <h4>Challenges Fased</h4>
+                    <ul>
+                        <li>Backend integration with UI</li>
+                        <li>Appointment conflict resolution</li>
+                        <li>Real-time feedback & search</li>
+                        <li>Role-based dashboard routing</li>
+                    </ul>
+
+                    <h4>Learning Outomes</h4>
+                    <p class="outcome">
+                        Through this project, I gained practical experience in backend development, data handling, and
+                        implementing secure user authentication. I also deepened my understanding of real-world system
+                        design, optimized database queries, and improved my problem-solving skills by addressing
+                        real-time challenges in healthcare tech solutions. Additionally, collaborating within a team
+                        enhanced my project management and communication abilities.
+                    </p> <br>
+
+                    <a href="" class="repo"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="include-footer"></div>
+
+    <script src="include.js"></script>
+</body>
+
+</html>

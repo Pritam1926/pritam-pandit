@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('./img/my-img.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            margin-left: 300px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(4, 11, 20, 0.7);
+            /* dark overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .hero .name {
+            color: #149ddd;
+            font-weight: bold;
+            font-size: 32px;
+        }
+
+        .typing-text {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .bio {
+            font-size: 16px;
+            margin: 15px 0;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            margin-top: 20px;
+        }
+
+        .cta-buttons .btn {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #149ddd;
+            color: #fff;
+            border-radius: 6px;
+            margin: 0 10px;
+            transition: all.3s ease;
+        }
+
+        .cta-buttons .btn.secondary {
+            background-color: transparent;
+            border: 1px solid #149ddd;
+        }
+
+        .cta-buttons .btn:hover {
+            background-color: #0e7ac4;
+        }
+
+        /* education------------- */
+
+        .education-section {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #149ddd;
+            display: inline-block;
+        }
+
+        .timeline {
+            border-left: 3px solid #e0e0e0;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 5px;
+            left: -15px;
+            width: 12px;
+            height: 12px;
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            background-color: #f9f9f9;
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #007bff;
+        }
+
+        .timeline-content p {
+            margin: 6px 0;
+            font-size: 15px;
+        }
+
+        /* projects------------ */
+        .project-section {
+            margin-left: 300px;
+            padding: 40px;
+            background-color: #f4fafd;
+        }
+
+        .project-card {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            object-fit: fill;
+        }
+
+        .project-details {
+            flex: 1;
+            padding: 25px;
+        }
+
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .tech-stack {
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 4px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .php {
+            background: #d3c5ff;
+            color: #2d02a4;
+        }
+
+        .mysql {
+            background: #d4fcd3;
+            color: #228822;
+        }
+
+        .js {
+            background: #fff3af;
+            color: #896c02;
+        }
+
+        .html {
+            background: #fadbb7;
+            color: #974701;
+        }
+
+        .css {
+            background: #cbe6ff;
+            color: #01617b;
+        }
+
+        .project-links .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .btn.github {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .btn.live {
+            background: #e0e7ff;
+            color: #1e40af;
+            border: 1px solid #a5b4fc;
+        }
+
+        .view {
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            margin-top: 40px;
+            background-color: #149ddd;
+            border-radius: 8px;
+            padding: 8px 12px;
+            color: #fff;
+            transition: all .3s ease;
+        }
+
+        .view:hover {
+            background-color: #0e7ac4;
+        }
+
+        /* skils-------------------------- */
+        .skills-section {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .technical-skills,
+        .language-skills {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .technical-skills h3,
+        .language-skills h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill span {
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .progress {
+            width: 100%;
+            background: #eee;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress .bar {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.4s ease;
+        }
+
+        .language {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .lang-icon {
+            font-size: 16px;
+        }
+
+        .lang-level {
+            font-size: 14px;
+            font-weight: 600;
+            flex: 1;
+            width: 100%;
+            text-align: right;
+        }
+
+        .native {
+            color: rgb(2, 150, 71);
+        }
+
+        .eng {
+            color: #072894;
+        }
+
+        .hin {
+            color: #e58201;
+        }
+
+        /* achievement---------------- */
+        .achievements-section {
+            margin-left: 300px;
+            padding: 40px;
+            background-color: #f4fafd;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .blue {
+            background: #3b82f6;
+        }
+
+        .green {
+            background: #05d892;
+        }
+
+        .yellow {
+            background: #facc15;
+            color: #333;
+        }
+
+        .purple {
+            background: #a78bfa;
+        }
+
+        .achievement-card h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .achievement-card p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .achievement-card .org {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* services---------------- */
+        .services {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            border-radius: 15px;
+            padding: 25px;
+            width: 280px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card .icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .icon.blue {
+            background-color: #a2c4ff;
+        }
+
+        .icon.green {
+            background-color: #b2f2bb;
+        }
+
+        .icon.purple {
+            background-color: #e0bbff;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* get in touch--------------- */
+        .contact {
+            margin-left: 300px;
+            padding: 40px;
+            background-color: #f4fafd;
+        }
+
+        .section-title1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        .contact-text {
+            font-size: 14px;
+            color: #333;
+            max-width: 700px;
+            text-align: center;
+            margin: 0 auto 20px;
+            line-height: 1.5;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background-color: #3b82f6;
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="include-header"></div>
+    <main>
+        <section class="hero">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="name">Pritam Pandit</span></h1>
+                <h2 class="typing-text"><span id="typed-role"></span></h2>
+                <p class="bio">
+                    Passionate developer and mentor with expertise in web development, data analytics, and educational
+                    technology. I help students and professionals grow their technical skills while building innovative
+                    solutions.<br><br>
+                    MCA aspirant | Tech Enthusiast | Educator | Content Creator
+                </p>
+                <div class="cta-buttons">
+                    <a href="resume.html" class="btn">View Resume</a>
+                    <a href="contact.html" class="btn secondary">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="timeline">
+                <!-- BCA -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><span class="edu-year">2022 – 2025</span> • Bachelor of Computer Applications</h3>
+                        <p>Global College of Science & Technology, MAKAUT University</p>
+                        <p><strong>CGPA: 8.7</strong> (Consistently ranked in Top 3, 1st Rank in BCA Batch)</p>
+                    </div>
+                </div>
+
+                <!-- HS -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><span class="edu-year">2022</span> • Higher Secondary</h3>
+                        <p>West Bengal Council of Higher Secondary Education</p>
+                        <p><strong>Percentage: 86.60%</strong></p>
+                    </div>
+                </div>
+
+                <!-- Secondary -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3><span class="edu-year">2020</span> • Secondary Education</h3>
+                        <p>West Bengal Board of Secondary Education</p>
+                        <p><strong>Percentage: 73.85%</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title">Latest Project</h2>
+
+            <div class="project-card">
+                <!-- Left: Image -->
+                <div class="project-image">
+                    <img src="./img/pro1.png" alt="project img" />
+                </div>
+
+                <!-- Right: Content -->
+                <div class="project-details">
+                    <h3 class="project-title">Online Doctor Appointment Booking System</h3>
+                    <p class="project-desc">
+                        A location-based web application that allows patients to find nearby doctors and book
+                        appointments easily. It streamlines healthcare access through real-time doctor listings, smart
+                        filtering, and instant booking confirmations.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tag php">PHP</span>
+                        <span class="tag mysql">MySQL</span>
+                        <span class="tag js">JavaScript</span>
+                        <span class="tag html">HTML</span>
+                        <span class="tag css">CSS</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="#" class="btn github">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <a href="projects.html" class="view">View All <i class="fa-solid fa-arrow-right-long"></i></a>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="section-title">Skills & Languages</h2>
+            <div class="skills-container">
+
+                <!-- Left: Technical Skills -->
+                <div class="technical-skills">
+                    <h3>Technical Skills</h3>
+
+                    <div class="skill">
+                        <span>C Language</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>C++</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Python</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>MySQL</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>DSA</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Web Development</span>
+                        <div class="progress">
+                            <div class="bar" style="width: 82%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Languages -->
+                <div class="language-skills">
+                    <h3>Languages</h3>
+                    <div class="language">
+                        <span class="lang-icon">🟢</span>
+                        <span>Bengali</span>
+                        <span class="lang-level native">Native</span>
+                    </div>
+                    <div class="language">
+                        <span class="lang-icon">🔵</span>
+                        <span>English</span>
+                        <span class="lang-level eng">Modarate</span>
+                    </div>
+                    <div class="language">
+                        <span class="lang-icon">🟠</span>
+                        <span>Hindi</span>
+                        <span class="lang-level hin">Modarate</span>
+                    </div>
+                </div>
+
+            </div>
+            <a href="teaching.html" class="view">View All <i class="fa-solid fa-arrow-right-long"></i></a>
+        </section>
+
+        <section class="achievements-section">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+
+                <div class="achievement-card">
+                    <div class="icon blue">📊</div>
+                    <h3>Data Analytics Internship</h3>
+                    <p>Completed professional internship at Webel focusing on data analytics and business intelligence
+                        solutions.</p>
+                    <span class="org" style="color: #3b82f6;">WEBEL-FUJISOFT-VARA</span>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="icon green">🐍</div>
+                    <h3>Python Workshop at IIT KGP</h3>
+                    <p>Successfully completed advanced Python programming workshop at Indian Institute of Technology,
+                        Kharagpur.</p>
+                    <span class="org" style="color: #04af76;">IIT Kharagpur</span>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="icon yellow">🎓</div>
+                    <h3>Academic Excellence</h3>
+                    <p>Consistently maintained top position in all semesters throughout BCA program with outstanding
+                        academic performance.</p>
+                    <span class="org" style="color: #d3a900;">1st in BCA (GCST-2025)</span>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="icon purple">📄</div>
+                    <h3>Research & Presentations</h3>
+                    <p>Presented original research paper at FOSET (Forum of Scientists, Engineers & Technologists) and
+                        actively participated in multiple seminars, workshops, and webinars with certifications on
+                        emerging technologies.</p>
+                    <span class="org" style="color: #8258ff;">FOSET</span>
+                </div>
+
+            </div>
+            <a href="achievements.html" class="view">View All <i class="fa-solid fa-arrow-right-long"></i></a>
+        </section>
+
+        <section class="services" id="services">
+            <h2 class="section-title">Services</h2>
+            <div class="service-cards">
+
+                <!-- Tuition -->
+                <div class="service-card">
+                    <div class="icon blue">📘</div>
+                    <h3>Tuition</h3>
+                    <p>Personalized tutoring in programming languages, web development, and computer science
+                        fundamentals for students of all levels.</p>
+                </div>
+
+                <!-- Mentorship -->
+                <div class="service-card">
+                    <div class="icon green">👨‍🏫</div>
+                    <h3>Career Mentorship</h3>
+                    <p>Comprehensive career guidance and mentorship for students including interview
+                        preparation and skill development roadmaps.</p>
+                </div>
+
+                <!-- Web Development -->
+                <div class="service-card">
+                    <div class="icon purple">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Custom web application development using modern technologies, from simple websites to complex
+                        database-driven applications.</p>
+                </div>
+
+            </div>
+            <a href="services.html" class="view">View All <i class="fa-solid fa-arrow-right-long"></i></a>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2 class="section-title1">Get In Touch</h2>
+            <p class="contact-text">
+                Ready to start your next project, need mentorship, or looking for personalized tuition?
+                Let’s connect and discuss how I can help you achieve your goals in development, academics, or career
+                growth.
+            </p>
+            <div class="contact-buttons">
+                <a href="mailto:youremail@example.com" class="btn">Send Email</a>
+            </div>
+        </section>
+
+    </main>
+    <div id="include-footer"></div>
+
+    <script src="include.js"></script>
+
+</body>
+
+</html>

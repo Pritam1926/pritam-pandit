@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+/* Media Query header */
+@media (max-width: 1025px) {
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.sidebar-show {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close-btn {
+        display: block;
+    }
+
+    .hero,
+    .education-section,
+    .project-section,
+    .skills-section,
+    .achievements-section,
+    .services,
+    .contact,
+    .about-hero,
+    .journey-section,
+    .vm-section,
+    .skill-section {
+        margin: 0;
+    }
+}
+
+/* index--------- */
+@media (max-width: 769px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image img {
+        max-width: 100%;
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (max-width: 426px) {
+
+    .hero .name,
+    .section-title,
+    .section-title1 {
+        font-size: 26px;
+    }
+
+    .typing-text {
+        font-size: 18px;
+    }
+
+    .bio,
+    .timeline-content h3 {
+        font-size: 14px;
+    }
+
+    .timeline-content p,
+    .project-desc,
+    .contact-text {
+        font-size: 12px;
+    }
+
+    .tag,
+    .project-links .btn {
+        padding: 3px 8px;
+        font-size: 12px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .project-title {
+        font-size: 16px;
+    }
+
+    .view,
+    .btn {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .education-section,
+    .project-section,
+    .skills-section,
+    .achievements-section,
+    .services,
+    .contact {
+        padding: 20px;
+    }
+}
+
+/* about---- */
+@media (max-width: 769px) {
+    .skill-cards {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 426px) {
+    .about-text h1 {
+        font-size: 24px;
+    }
+
+    .about-text p,
+    .journey-box p {
+        font-size: 12px;
+    }
+
+    .about-hero,
+    .journey-section,
+    .vm-section,
+    .skill-section {
+        padding: 20px;
+    }
+
+    .about-hero {
+        padding-top: 80px;
+    }
+
+    .journey-box {
+        padding: 20px;
+    }
+
+    .journey-box ul {
+        font-size: 12px;
+        padding-left: 20px;
+    }
+}
+
+/* project--------- */
+@media (max-width: 1300px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-card img {
+        max-width: 100%;
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (max-width: 1025px) {
+
+    .project-hero,
+    .project-showcase {
+        margin: 0;
+    }
+}
+
+@media (max-width: 426px) {
+    .project-hero h1 {
+        font-size: 28px;
+    }
+
+    .project-hero p {
+        font-size: 12px;
+    }
+
+    .project-details h3 {
+        font-size: 14px;
+    }
+
+    .project-hero,
+    .project-showcase {
+        padding: 20px;
+    }
+}
+
+/* achievement------- */
+@media (max-width: 1025px) {
+    .achiev-hero {
+        margin: 0;
+    }
+}
+
+@media (max-width: 769px) {
+    .tab-container {
+        max-width: 400px;
+    }
+
+    .tab-button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 491px) {
+
+    .card-header h3,
+    .key-learnings,
+    .research-card h3 {
+        font-size: 14px;
+    }
+
+    .status {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .card-header .role,
+    .key-learnings li,
+    .description,
+    .type {
+        font-size: 12px;
+    }
+
+    .internship-card,
+    .research-card,
+    .card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 426px) {
+    .achiev-hero h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .icon {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .tags span {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .download-btn .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .tab-container {
+        max-width: 300px;
+    }
+
+    .tab-button {
+        padding: 5px 12px;
+        font-size: 10px;
+    }
+
+    .achiev-hero {
+        padding: 20px;
+    }
+}
+
+/* teaching--------- */
+@media (max-width: 1025px) {
+
+    .hero-section,
+    .subjects-section,
+    .services-sec,
+    .why-learn-section,
+    .testimonial-section,
+    .announcement-section {
+        margin: 0;
+    }
+
+    .hero-section {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 426px) {
+
+    .hero-content h1,
+    .section-title {
+        font-size: 26px;
+    }
+
+    .subheading {
+        font-size: 14px;
+    }
+
+    .whatsapp,
+    .visit-button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .hero-section,
+    .subjects-section,
+    .services-sec,
+    .why-learn-section,
+    .testimonial-section,
+    .announcement-section {
+        padding: 20px;
+    }
+
+    .hero-section {
+        padding-top: 70px;
+    }
+}
+
+/* resume---------- */
+
+@media (max-width: 1025px) {
+    .resume-section {
+        margin: 0;
+    }
+}
+
+@media (max-width: 426px) {
+    .resume-section {
+        padding: 20px;
+    }
+
+    .resume-section h1 {
+        font-size: 26px;
+    }
+
+    .resume-section p {
+        font-size: 14px;
+    }
+
+    .resume-preview {
+        height: 350px;
+    }
+
+    .download-btn button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+/* services----------- */
+@media (max-width: 1025px) {
+
+    .hero,
+    .service-section,
+    .contact-me {
+        margin: 0;
+    }
+}
+
+@media (max-width: 426px) {
+
+    .hero,
+    .service-section,
+    .contact-me {
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        margin-top: 40px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .badge {
+        height: 40px;
+        width: 40px;
+        border-radius: 12px;
+    }
+}
+
+/* social------- */
+@media (max-width: 1025px) {
+
+    .hero,
+    .social-sec,
+    .galary-sec,
+    .collab-section {
+        margin: 0;
+    }
+}
+
+@media (max-width: 426px) {
+
+    .hero,
+    .social-sec,
+    .galary-sec,
+    .collab-section {
+        padding: 20px;
+    }
+
+    .galary-sec h2 {
+        font-size: 24px;
+    }
+
+    .collab-section p {
+        font-size: 14px;
+    }
+}
+
+/* contact------- */
+@media (max-width: 1025px) {
+
+    .contact-hero,
+    .contact-info-section,
+    .location,
+    .social-section,
+    .looking {
+        margin: 0;
+    }
+}
+
+@media (max-width: 426px) {
+    .contact-hero h1 {
+        font-size: 26px;
+        margin-top: 30px;
+    }
+
+    .contact-hero,
+    .contact-info-section,
+    .location,
+    .social-section,
+    .looking {
+        padding: 20px;
+    }
+    .contact-box{
+        padding: 15px;
+    }
+    .info-item .icon{
+        font-size: 14px;
+    }
+    .info-item h4, .info-item p{
+        font-size: 12px;
+    }
+    .social-media .icon{
+        height: 40px;
+        width: 40px;
+        font-size: 14px;
+    }
+    .visit-now{
+        padding: 20px;
+    }
+    .visit-now p{
+        font-size: 12px;
+    }
+    .visit-now a{
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero {
+            margin-left: 300px;
+            padding: 50px;
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #eaeaea;
+            font-size: 14px;
+        }
+
+        /* social-section-------- */
+        .social-sec {
+            margin-left: 300px;
+            padding: 40px;
+            background-color: #f4fafd;
+        }
+
+        .social-media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .social-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: all .3s ease;
+        }
+
+        .badge {
+            height: 40px;
+            width: 40px;
+            border-radius: 12px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .linkedin .badge {
+            background-color: #def3fe;
+            color: #0077B5;
+        }
+
+        .github .badge {
+            background-color: #f1f1f1;
+            color: #24292E;
+        }
+
+        .yt .badge {
+            background-color: #ffe9e9;
+            color: #ff0000;
+        }
+
+        .insta .badge {
+            background-color: #ffe2f3;
+            color: #C13584;
+        }
+
+        .fb .badge {
+            background-color: #e0edff;
+            color: #1877F2;
+        }
+
+        .wp .badge {
+            background-color: #dbffe8;
+            color: #128c7e;
+        }
+
+        .tech .badge {
+            background-color: #f6e3ff;
+            color: #8723b9;
+        }
+
+        .linkedin p {
+            color: #0077B5;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .github p {
+            color: #24292E;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .yt p {
+            color: #ff0000;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .insta p {
+            color: #C13584;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .fb p {
+            color: #1877F2;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .wp p {
+            color: #128c7e;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .tech p {
+            color: #8723b9;
+            margin: 5px 0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .social-card a {
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 12px;
+            text-align: center;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .linkedin a {
+            background-color: #0077B5;
+        }
+
+        .github a {
+            background-color: #24292E;
+        }
+
+        .yt a {
+            background-color: #ff0000;
+        }
+
+        .insta a {
+            background-color: #C13584;
+        }
+
+        .fb a {
+            background-color: #1877F2;
+        }
+
+        .wp a {
+            background-color: #128c7e;
+        }
+
+        .tech a {
+            background-color: #8723b9;
+        }
+
+        .social-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* galary--------- */
+        .galary-sec {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .galary-sec h2 {
+            color: #24292E;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .galary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .galary-card {
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+        .galary-card img {
+            border-radius: 15px 15px 0 0;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: fill;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+
+        .galary-card p {
+            color: #42484f;
+            font-size: 12px;
+            margin-bottom: 5px;
+            padding: 0 5px;
+        }
+
+        .galary-card a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            padding: 5px 8px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 5px 5px;
+        }
+
+        /* collaboration----- */
+        .collab-section {
+            background-color: #f4fafd;
+            text-align: center;
+            padding: 40px;
+            margin-left: 300px;
+        }
+
+        .collab-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .collab-section p {
+            color: #4d5257;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .collab-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .collab-buttons a {
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-contact {
+            background-color: #6c63ff;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-contact:hover {
+            background-color: #574fd9;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe57;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="include-header"></div>
+    <main>
+        <section class="hero">
+            <h1>Let's Connect & Collaborate!</h1>
+            <p>Find me across platforms where I share code, content, and mentorship.</p>
+        </section>
+
+        <section class="social-sec">
+            <div class="social-media">
+
+                <div class="social-card linkedin">
+                    <span class="badge"><i class="fa-brands fa-linkedin"></i></span>
+                    <h4>Linkedin</h4>
+                    <p>Connections: 15+</p>
+                    <a href="https://www.linkedin.com/in/pritam-pandit-7b9b3933b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        target="_blank">Visit Profile</a>
+                </div>
+
+                <div class="social-card github">
+                    <span class="badge"><i class="fab fa-github"></i></span>
+                    <h4>GitHub</h4>
+                    <p>Repos: 3</p>
+                    <a href="https://github.com/Pritam1926/" target="_blank">View Repos</a>
+                </div>
+
+                <div class="social-card yt">
+                    <span class="badge"><i class="fa-brands fa-youtube"></i></span>
+                    <h4>YouTube</h4>
+                    <p>Subscribers: 120+</p>
+                    <a href="https://youtube.com/@codergoals?si=MQjAIVezH1bicpaI" target="_blank">Subscribe</a>
+                </div>
+
+                <div class="social-card insta">
+                    <span class="badge"><i class="fa-brands fa-instagram"></i></span>
+                    <h4>Instagram</h4>
+                    <p>Followers: 125+</p>
+                    <a href="https://www.instagram.com/pritam.pandit.12139/" target="_blank">Follow</a>
+                </div>
+
+                <div class="social-card fb">
+                    <span class="badge"><i class="fa-brands fa-facebook"></i></span>
+                    <h4>Facebook</h4>
+                    <p>Followers: 1.2k+</p>
+                    <a href="https://www.facebook.com/share/16wecNzKUd/" target="_blank">Follow</a>
+                </div>
+
+                <div class="social-card wp">
+                    <span class="badge"><i class="fa-brands fa-whatsapp"></i></span>
+                    <h4>WhatsApp</h4>
+                    <p>91+ 9134331164</p>
+                    <a href="https://wa.me/9134331164" target="_blank">Message</a>
+                </div>
+
+                <div class="social-card tech">
+                    <span class="badge"><i class="fa-solid fa-building"></i></i></span>
+                    <h4>ZodeTech</h4>
+                    <p>Working..</p>
+                    <a href="zodetech.html" target="_blank">Visit</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="galary-sec">
+            <h2>Social Highlights</h2>
+            <div class="galary">
+
+                <div class="galary-card insta">
+                    <img src="./img/img1.jpg" alt="">
+                    <p>My latest coding setup for maximum productivity</p>
+                    <a href="">View on Instagram</a>
+                </div>
+
+                <div class="galary-card yt">
+                    <img src="./img/img2.jpg" alt="">
+                    <p>JavaScript fundamentals explained in 10 minutes </p>
+                    <a href="">View on YouTube</a>
+                </div>
+
+                <div class="galary-card linkedin">
+                    <img src="./img/img3.jpg" alt="">
+                    <p>Speaking at TechConf 2024 about modern web development</p>
+                    <a href="">View on Linkedin</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="collab-section">
+            <h2>Want to create something together?</h2>
+            <p>Let's collaborate or have a chat about your next project.</p>
+            <div class="collab-buttons">
+                <a href="tel:+917719332510" class="btn-contact">Contact Me</a>
+                <a href="https://wa.me/9134331164" class="btn-whatsapp" target="_blank">Message on WhatsApp</a>
+            </div>
+        </section>
+    </main>
+    <div id="include-footer"></div>
+
+    <script src="include.js"></script>
+</body>
+
+</html>

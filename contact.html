@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .contact-hero {
+            text-align: center;
+            margin-left: 300px;
+            padding: 40px;
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .contact-hero h1 {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact-hero p {
+            font-size: 14px;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        /* contact info----------------- */
+        .contact-info-section {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .contact-box {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.2);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-item .icon {
+            background-color: #e6efff;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 18px;
+            color: #5380fc;
+        }
+
+        .info-item h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* map------------- */
+        .location {
+            margin-left: 300px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map {
+            max-width: 800px;
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 16px;
+        }
+
+        /* social media------------ */
+        .social-section {
+            margin-left: 300px;
+            padding: 40px;
+        }
+
+        .social-section h2 {
+            font-size: 26px;
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 25px;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-media .icon {
+            text-decoration: none;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+            font-size: 20px;
+            color: #626b78;
+            transition: all 0.3s ease;
+        }
+
+        .linkedin:hover {
+            scale: 1.1;
+            color: #4470f4;
+        }
+
+        .github:hover {
+            scale: 1.1;
+            color: #202020;
+        }
+
+        .fb:hover {
+            scale: 1.1;
+            color: #4499f4;
+        }
+
+        .insta:hover {
+            scale: 1.1;
+            color: #7644f4;
+        }
+
+        .yt:hover {
+            scale: 1.1;
+            color: #f44444;
+        }
+        /* visit now------------ */
+        .looking{
+            margin-left: 300px;
+            padding: 40px;
+        }
+        .visit-now{
+            padding: 40px;
+            background-image: linear-gradient(135deg, #eefdff, #e9ffe9);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .visit-now p{
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #202020;
+        }
+        .visit-now a{
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background-color: #2a87eb;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all .3s ease;
+        }
+        .visit-now a:hover{
+            background-color: #3668ef;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="include-header"></div>
+    <main>
+        <section class="contact-hero">
+            <h1>Let's Get in Touch</h1>
+            <p>
+                Whether you have a project idea, need guidance, are looking for tuition, want to collaborate, or promote
+                something —<br>
+                I'm always happy to connect.
+            </p>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="contact-box">
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <h4>Phone / WhatsApp</h4>
+                        <p>+91 7719332510</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>panditpritam399@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Karimpur, Nadia-741152, West Bengal, India</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h4>Available</h4>
+                        <p>Mon–Sat, 10 AM – 8 PM IST</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d227.83231514195396!2d88.63728185494978!3d23.98457909250349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1753509314053!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+        </section>
+
+        <section class="social-section">
+            <h2>Follow me on social media</h2>
+            <div class="social-media">
+                <a href="#" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon github"><i class="fab fa-github"></i></a>
+                <a href="#" class="icon fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon insta"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="icon yt"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+
+        <section class="looking">
+            <div class="visit-now">
+                <p>Looking for tuition, tech mentorship, or career help? Visit my EdTech platform ZodeTech</p>
+                <a href="#">Visit Now</a>
+            </div>
+        </section>
+    </main>
+    <div id="include-footer"></div>
+
+    <script src="include.js"></script>
+</body>
+
+</html>
