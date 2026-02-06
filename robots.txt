@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pritam1926.github.io/pritam-pandit/sitemap.xml
