@@ -1,517 +1,460 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teaching Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Teaching &amp; Mentorship | Pritam Pandit Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/components.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3713ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0a0a0c",
+                        "navy-card": "#131022",
+                        "navy-border": "#1d1c3a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"],
+                        "lexend": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
     <style>
-        .hero-section {
-            background: url('./img/teach-back.jpg') no-repeat center center/cover;
-            padding: 40px;
-            position: relative;
-            color: #0f172a;
-            margin-left: 300px;
+        .font-lexend {
+            font-family: 'Lexend', sans-serif;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(3px);
-            z-index: 0;
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+            width: 4px;
         }
 
-        .hero-content {
-            position: relative;
-            max-width: 600px;
-            z-index: 1;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
         }
 
-        .hero-content h1 {
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .hero-content h1 span {
-            color: #0a58ca;
-        }
-
-        .subheading {
-            font-size: 18px;
-            margin: 16px 0;
-            font-weight: 500;
-            color: #334155;
-        }
-
-        .description {
-            font-size: 16px;
-            color: #3e4b5e;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            align-items: center;
-        }
-
-        .whatsapp {
-            display: flex;
-            align-items: center;
-            background-color: #e0f7e9;
-            color: #16a34a;
-            padding: 10px 16px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-        }
-
-        .visit-button {
-            background-color: #2563eb;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .visit-button:hover {
-            background-color: #1d4ed8;
-        }
-
-        /* subject offers------------- */
-        .subjects-section,
-        .why-learn-section,
-        .announcement-section {
-            margin-left: 300px;
-            padding: 40px;
-
-        }
-
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #149ddd;
-            display: inline-block;
-        }
-
-        .subjects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 24px;
-        }
-
-        .subject-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .subject-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .subject-card .icon {
-            font-size: 20px;
-            margin-bottom: 12px;
-            background-color: #eef2ff;
-            color: #2563eb;
-            width: 40px;
-            height: 40px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-        }
-
-        .subject-card h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1f2937;
-            margin: 8px 0;
-        }
-
-        .subject-card p {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.5;
-        }
-
-        .view {
-            text-decoration: none;
-            text-align: center;
-            display: inline-block;
-            margin-top: 40px;
-            background-color: #149ddd;
-            border-radius: 8px;
-            padding: 8px 12px;
-            color: #fff;
-            transition: all .3s ease;
-        }
-
-        /* servicess------------- */
-        .services-sec,
-        .testimonial-section {
-            margin-left: 300px;
-            padding: 40px;
-            background-color: #f4fafd;
-        }
-
-        /* why learn------------------- */
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-        }
-
-        .stat-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .stat-card h3 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #0a58ca;
-            margin-bottom: 8px;
-        }
-
-        .stat-card p {
-            font-size: 14px;
-            color: #6b7280;
-            /* gray-500 */
-        }
-
-        /* testimology--------- */
-
-        .carousel-container {
-            position: relative;
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .carousel {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            padding: 20px 0;
-        }
-
-        .carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .carousel {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .card {
-            flex-shrink: 0;
-            max-width: 320px;
-            background: white;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1d1c3a;
             border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
         }
 
-        .card h3 {
-            margin: 0;
-            font-size: 16px;
-            color: #0f172a;
+        .glow-blue {
+            box-shadow: 0 0 15px rgba(55, 19, 236, 0.3);
         }
 
-        .card .sub {
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 10px;
+        .glow-icon {
+            filter: drop-shadow(0 0 8px rgba(55, 19, 236, 0.6));
         }
 
-        .card p {
-            color: #6b7280;
-            font-size: 14px;
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 2rem;
         }
 
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: white;
-            border: 1px solid #ccc;
-            padding: 8px 12px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 2;
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 2rem;
+            animation: scroll 50s linear infinite;
         }
 
-        .nav-btn.left {
-            left: 0;
-        }
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
 
-        .nav-btn.right {
-            right: 0;
-        }
-
-        /* announcement------------- */
-
-        .announcement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            /* max-width: 1200px; */
-            margin: 0 auto;
-        }
-
-        .announcement-card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            transition: all 0.3s ease;
-        }
-
-        .announcement-card:hover {
-            transform: translateY(-5px);
-        }
-        .announcement-card img{
-            width: 100%;
-            aspect-ratio: 4/2;
-            object-fit: fill;
-        }
-        .announcement-card .date {
-            padding: 10px;
-            color: #2b6fff;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .announcement-card h3 {
-            padding: 0 0 0 10px;
-            font-size: 18px;
-            color: #111;
-        }
-
-        .announcement-card .line {
-            padding: 10px 10px 0 10px;
-            font-size: 15px;
-            color: #444;
-            margin-bottom: 10px;
-        }
-
-        .announcement-card .btn {
-            margin: 10px;
-            display: block;
-            text-align: center;
-            padding: 10px 18px;
-            background: #2b6fff;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .announcement-card .btn:hover {
-            background: #1f4ecf;
+            to {
+                transform: translateX(calc(-100% - 2rem));
+            }
         }
     </style>
 </head>
 
-<body>
-    <div id="include-header"></div>
-    <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Guiding Futures with <span>ZodeTech</span></h1>
-                <p class="subheading">
-                    Learn, grow, and succeed with personalized tuition, live sessions & expert mentorship.
-                </p>
-                <p class="description">
-                    With over 3 years of dedicated teaching experience, I've helped hundreds of BCA/B.Tech students
-                    master programming and technology. Through ZodeTech, we provide comprehensive learning resources and
-                    personalized guidance to ensure your success.
-                </p>
-                <div class="contact-buttons">
-                    <a href="https://wa.me/9134331164" class="whatsapp" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i>9134331164
-                    </a>
-                    <a href="zodetech.html" class="visit-button" target="_blank">Visit ZodeTech →</a>
-                </div>
-            </div>
-            <div class="hero-bg"></div>
-        </section>
-
-        <section class="subjects-section">
-            <h2 class="section-title">Subjects Offered</h2>
-            <div class="subjects-grid">
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-c"></i></div>
-                    <h3>C Programming</h3>
-                    <p>Master fundamental concepts and problem-solving</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-object-group"></i></div>
-                    <h3>C++</h3>
-                    <p>Object-oriented programming and STL</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-brands fa-python"></i></div>
-                    <h3>Python</h3>
-                    <p>Modern programming with real-world applications</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-brands fa-java"></i></div>
-                    <h3>Java</h3>
-                    <p>Enterprise-level development skills</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-database"></i></div>
-                    <h3>DBMS & SQL</h3>
-                    <p>Database design and management</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, and modern web technologies</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-hexagon-nodes-bolt"></i></div>
-                    <h3>DSA</h3>
-                    <p>Data Structures and Algorithms</p>
-                </div>
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-globe"></i></div>
-                    <h3>Networking</h3>
-                    <p>Computer networks and protocols</p>
-                </div>
-            </div>
-            <a href="zodetech.html" class="view">View All <i class="fa-solid fa-arrow-right-long"></i></a>
-        </section>
-
-        <section class="services-sec">
-            <h2 class="section-title">Our Services</h2>
-            <div class="subjects-grid">
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-book-open-reader"></i></div>
-                    <h3>Semester-wise Tuition</h3>
-                    <p>Comprehensive coverage of BCA/B.Tech curriculum with practical assignments and exam preparation.
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+    <div class="flex min-h-screen">
+        <portfolio-sidebar></portfolio-sidebar>
+        <main class="flex-1 lg:ml-72 min-h-screen overflow-y-auto custom-scrollbar relative font-lexend">
+            <!-- Page Intro -->
+            <section class="pt-16 pb-12 px-12 text-center bg-gradient-to-b from-primary/10 to-transparent">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-5xl font-black tracking-tight mb-4">Teaching &amp; Mentorship</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                        Helping the next generation of engineers bridge the gap between academic theory and real-world
+                        production systems through personalized guidance and technical depth.
                     </p>
                 </div>
-
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-rocket"></i></div>
-                    <h3>Crash Courses</h3>
-                    <p>Intensive learning programs designed to quickly master specific technologies or concepts.</p>
-                </div>
-
-                <div class="subject-card">
-                    <div class="icon"><i class="fa-solid fa-compass"></i></div>
-                    <h3>Career Guidance</h3>
-                    <p>Professional mentorship to help you navigate your tech career path and opportunities.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="why-learn-section">
-            <h2 class="section-title">Why Learn With Me?</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>3+</h3>
-                    <p>Years Teaching Experience</p>
-                </div>
-                <div class="stat-card">
-                    <h3>100+</h3>
-                    <p>Students Taught</p>
-                </div>
-                <div class="stat-card">
-                    <h3>95%</h3>
-                    <p>Success Rate</p>
-                </div>
-                <div class="stat-card">
-                    <h3>24/7</h3>
-                    <p>Support Available</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonial-section">
-            <h2 class="section-title">Student Testimonials</h2>
-            <div class="carousel-container">
-                <!-- <button class="nav-btn left" onclick="scrollLeft()">&#8592;</button> -->
-
-               <!-- <div class="carousel" id="testimonialCarousel">
-                    <div class="card">
-                        <h3>Rahul Sharma</h3>
-                        <p class="sub">BCA Final Year</p>
-                        <p>"The personalized attention and practical approach to teaching helped me master complex
-                            programming concepts easily."</p>
+            </section>
+            <!-- Teaching Services Grid -->
+            <section class="px-12 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-slate-50 dark:bg-navy-card border border-slate-200 dark:border-navy-border p-6 rounded-xl hover:border-primary/50 transition-all group">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6 text-primary glow-icon">
+                            <span class="material-symbols-outlined text-3xl">menu_book</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Semester Wise Tuition</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Comprehensive semester-focused coaching to
+                            ensure academic excellence and deep conceptual understanding.</p>
                     </div>
-                    <div class="card">
-                        <h3>Priya Patel</h3>
-                        <p class="sub">B.Tech CSE</p>
-                        <p>"Excellent teaching methodology with real-world examples made learning DSA much more
-                            interesting and practical."</p>
+                    <div
+                        class="bg-slate-50 dark:bg-navy-card border border-slate-200 dark:border-navy-border p-6 rounded-xl hover:border-primary/50 transition-all group">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6 text-primary glow-icon">
+                            <span class="material-symbols-outlined text-3xl">assignment_turned_in</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Entrance Exam Prep</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Targeted preparation strategies for
+                            competitive
+                            exams, focusing on problem-solving speed and accuracy.</p>
                     </div>
-                    <div class="card">
-                        <h3>Amit Kumar</h3>
-                        <p class="sub">BCA Second Year</p>
-                        <p>"The crash courses are incredibly well-structured and helped me catch up with my semester
-                            syllabus effectively."</p>
+                    <div
+                        class="bg-slate-50 dark:bg-navy-card border border-slate-200 dark:border-navy-border p-6 rounded-xl hover:border-primary/50 transition-all group">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6 text-primary glow-icon">
+                            <span class="material-symbols-outlined text-3xl">trending_up</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Career Guidance</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Expert advice on career paths, industry
+                            trends, and skill development to build a successful future.</p>
                     </div>
-                    
+                    <div
+                        class="bg-slate-50 dark:bg-navy-card border border-slate-200 dark:border-navy-border p-6 rounded-xl hover:border-primary/50 transition-all group">
+                        <div
+                            class="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6 text-primary glow-icon">
+                            <span class="material-symbols-outlined text-3xl">computer</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Class XI/XII COMA/COMS</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Specialized coaching for Computer
+                            Application
+                            and Computer Science for Class XI and XII students.</p>
+                    </div>
                 </div>
+            </section>
+            <!-- Technical Subjects Slider (Marquee) -->
+            <section
+                class="py-12 bg-slate-100 dark:bg-navy-border/20 border-y border-slate-200 dark:border-navy-border overflow-hidden">
+                <div class="marquee">
+                    <div class="marquee-content">
+                        <!-- Content Block 1 -->
+                        <span
+                            class="px-6 py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-sm font-bold glow-blue">C</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-purple-500/40 bg-purple-500/10 text-purple-400 text-sm font-bold">C++</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-blue-400/40 bg-blue-400/10 text-blue-400 text-sm font-bold">Python</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-green-500/40 bg-green-500/10 text-green-400 text-sm font-bold">Java</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-yellow-500/40 bg-yellow-500/10 text-yellow-400 text-sm font-bold">Computer
+                            Architecture</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-400 text-sm font-bold">DBMS</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-400 text-sm font-bold">Operating
+                            System</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 text-cyan-400 text-sm font-bold">Computer
+                            Network</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-sm font-bold glow-blue">Software
+                            Engineering</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-purple-500/40 bg-purple-500/10 text-purple-400 text-sm font-bold">Data
+                            Structure</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-blue-400/40 bg-blue-400/10 text-blue-400 text-sm font-bold">Algorithm</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-green-500/40 bg-green-500/10 text-green-400 text-sm font-bold">Digital
+                            Electronics</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-yellow-500/40 bg-yellow-500/10 text-yellow-400 text-sm font-bold">UNIX
+                            Architecture</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-400 text-sm font-bold">Web
+                            Development</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-400 text-sm font-bold">PHP
+                            with MySQL</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 text-cyan-400 text-sm font-bold">Core
+                            CS</span>
+                    </div>
+                    <!-- Duplicate for infinite effect -->
+                    <div class="marquee-content">
+                        <!-- Content Block 2 (Identical Copy) -->
+                        <span
+                            class="px-6 py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-sm font-bold glow-blue">C</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-purple-500/40 bg-purple-500/10 text-purple-400 text-sm font-bold">C++</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-blue-400/40 bg-blue-400/10 text-blue-400 text-sm font-bold">Python</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-green-500/40 bg-green-500/10 text-green-400 text-sm font-bold">Java</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-yellow-500/40 bg-yellow-500/10 text-yellow-400 text-sm font-bold">Computer
+                            Architecture</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-400 text-sm font-bold">DBMS</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-400 text-sm font-bold">Operating
+                            System</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 text-cyan-400 text-sm font-bold">Computer
+                            Network</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-primary/40 bg-primary/10 text-primary text-sm font-bold glow-blue">Software
+                            Engineering</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-purple-500/40 bg-purple-500/10 text-purple-400 text-sm font-bold">Data
+                            Structure</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-blue-400/40 bg-blue-400/10 text-blue-400 text-sm font-bold">Algorithm</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-green-500/40 bg-green-500/10 text-green-400 text-sm font-bold">Digital
+                            Electronics</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-yellow-500/40 bg-yellow-500/10 text-yellow-400 text-sm font-bold">UNIX
+                            Architecture</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-pink-500/40 bg-pink-500/10 text-pink-400 text-sm font-bold">Web
+                            Development</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-orange-500/40 bg-orange-500/10 text-orange-400 text-sm font-bold">PHP
+                            with MySQL</span>
+                        <span
+                            class="px-6 py-2 rounded-full border border-cyan-500/40 bg-cyan-500/10 text-cyan-400 text-sm font-bold">Core
+                            CS</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Student Gallery Slider -->
+            <section class="px-12 py-20">
+                <div class="flex items-end justify-between mb-10">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2">Our Students</h2>
 
-                <button class="na-btn right" onclick="scrollRight()">&#8594;</button> -->
-                <p>No Testimonials</p>
-            </div>
-        </section>
-
-        <section class="announcement-section">
-            <h2 class="section-title">Latest Announcements</h2>
-            <div class="announcement-grid">
-
-                <!-- <div class="announcement-card">
-                    <img src="./img/pro1.png" alt="">
-                    <p class="date">Starting July 30, 2025</p>
-                    <h3>Python Bootcamp</h3>
-                    <p class="line">Intensive 4-week program covering Python fundamentals to advanced concepts.</p>
-                    <a href="#" class="btn">Register Now</a>
+                        <!-- </div>
+                    <div class="flex gap-2">
+                        <button
+                            class="h-10 w-10 rounded-full border border-slate-200 dark:border-navy-border flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button
+                            class="h-10 w-10 rounded-full border border-slate-200 dark:border-navy-border flex items-center justify-center hover:bg-primary/10 transition-colors">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div> -->
+                    </div>
+                    <!-- <div class="flex gap-6 overflow-x-auto pb-6 custom-scrollbar">
+                    <div class="min-w-[350px] aspect-[4/3] rounded-xl bg-cover bg-center border border-slate-200 dark:border-navy-border relative group overflow-hidden"
+                        data-alt="Developers collaborating in a modern brightly lit office"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiYzSKT9-fOV7vINhv81y7TXCCn1yB-Lz1l3cFROW8xjOcJZTPzSXPo6PC7OIq94UpyBLhnhSW0QWhj5qW27nk1XkwPquYpXdBEfAqan5ZWIQZo2jQFrgZKJnzKCCLWdUFg-GIuE_ibWkP20VNKvtj3xgK08sVWaD-m-vU-fPGpiUM6ecdS97a9wqvznRjOfWmF7IzNW768VaprBVFlM2Dvu33hgMCcULbbac7q9Xxjx6VFAI07_uhwTUW2wL86p0-2uUKfGfuAuy4')">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <p class="text-white text-sm font-medium">Internal Workshop: Scalable React Patterns</p>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] aspect-[4/3] rounded-xl bg-cover bg-center border border-slate-200 dark:border-navy-border relative group overflow-hidden"
+                        data-alt="A small group of students listening to a lecture"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9er_c_hriQNadNsvj9iim6wtbTAmizEtONCKWGc871BDmmzOl8oQTNRywCtfLMEAarMnzdEujLYwqtlfOjyxSpCsEaQwvCDqdBwWmZD9Gbj2IzxocOS2vuj48KiqL-L3y-97zllFL7pKGk0SIkd1lsxcIPAphHXJMVcjn3lqf-uIB6auByI1PI-AC7wDu2WwCNEh1fwh9kgD8zUAeftubpzYIZVAsMTMhjYcX76fAgp1cgts77lJ-fGyuxacth8Ox0aJOUOBPSHt-')">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <p class="text-white text-sm font-medium">Node.js Performance Optimization Seminar</p>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] aspect-[4/3] rounded-xl bg-cover bg-center border border-slate-200 dark:border-navy-border relative group overflow-hidden"
+                        data-alt="Diverse group of students working together on laptops"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA00lOWZR0ei6k6cGOCr5UgB7MokGM7fHfkp4vJZrWWKFXUjyvvsV5AWOQLIdm5TUubHzYGqbDCsIEsc8rEgc-jNQ1ZkKmaFDm9zIDd2VH04WrsnP-tll5oYXQLlu90G8DQUwc0GZskEcknMbrDYOoacy9OhxyI5Z_zgMynFMnHRNKujUbJFIWDDiA4U8iqI2OcPtApMNyYzvkIWAYZRWe7UHuoRGu-NcfLupW0veqXK_BgOafnqgQf9jC0ayI3u5dbW_hmwGue7lF-')">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <p class="text-white text-sm font-medium">Mentorship Program: Q3 Cohort Graduation</p>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] aspect-[4/3] rounded-xl bg-cover bg-center border border-slate-200 dark:border-navy-border relative group overflow-hidden"
+                        data-alt="A speaker presenting code on a large screen to an audience"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmS_06k3qBRiDXK4hvvpqScTq15QKgfr1qHrDk4o2ZzxFZ9cM6bJch-DfMlY85v6kxjkouSncOD4mwX86d1OTXteh3Btn8P_oSJrMu91Fl_zwNWII4ezmbbi52PESm5oxa1eCgiZtTcN6nBA_5Mn3b-ocvGf4H4uW0d3kQeoIVxeNHGGrZwXgOY44EepZ7yQvPzm4L4wha4vmAN3mhbJI359Uj4HKiBYy9hqOyzp12NRVuupBfvY8JcHYbEOkpjYJJKUg1MFHr7XN_')">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                            <p class="text-white text-sm font-medium">Public Keynote: Future of Web Infrastructure</p>
+                        </div>
+                    </div> 
+                </div>-->
+            </section>
+            <!-- Why Learn With Me -->
+            <section class="px-12 py-20 bg-slate-100 dark:bg-navy-border/10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Why Learn With Me?</h2>
+                    <p class="text-slate-500 dark:text-slate-400">Beyond just syntax, I teach the mindset and
+                        methodology.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 glow-icon">
+                            <span class="material-symbols-outlined text-4xl">rocket_launch</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Real-World Projects</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Stop building Todo apps.
+                            We work on systems that mimic actual enterprise environments and scale challenges.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 glow-icon">
+                            <span class="material-symbols-outlined text-4xl">visibility</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Industry Insights</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Learn how Silicon Valley
+                            engineers actually work, from CI/CD pipelines to agile ceremonies and system design.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6 glow-icon">
+                            <span class="material-symbols-outlined text-4xl">speed</span>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Accelerated Growth</h4>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Avoid common pitfalls and
+                            learn the 'senior mindset' that takes years to acquire through trial and error.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Student Testimonials Slider -->
+            <section class="px-12 py-20">
+                <div class="flex items-center justify-between mb-12">
+                    <h2 class="text-3xl font-bold">What Our Students Say</h2>
+                </div>
+                <!-- <div class="flex gap-8 overflow-x-auto pb-8 custom-scrollbar">
+                    <div
+                        class="min-w-[450px] bg-slate-50 dark:bg-navy-card p-8 rounded-xl border border-slate-200 dark:border-navy-border relative">
+                        <span
+                            class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-6">format_quote</span>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed italic">
+                            "Alex transformed the way I think about software architecture. His ability to break down
+                            complex system design into manageable parts is unparalleled. I went from a junior dev to a
+                            lead role in just 8 months."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-cover bg-center border border-primary"
+                                data-alt="Portrait of a professional woman with a warm smile"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNS6RLPKjQ85iFEjGoYqe0XZazT1C3QNADkd7D1M5JE3FgCEe54iMMHUwasF3RUQ79Xfx5_URJaKr8cgznL34OaEiq8Gruru0c0NXWBKAWQq09aW04xyvMI7qdeBTXXyWVVOshYgutQzpfynijzwKd-w4J8T7ogMr6ReKCBgsVcGpcgruAGINJ2VVFixH9eHlLn9BqqhvDCxD5Ok5IWWGlghO0JniSO8kpC7CDrwajI1FmGOQt7s87L3a9uRT2e0o7PPFxvjOpKVh2')">
+                            </div>
+                            <div>
+                                <h5 class="font-bold">Sarah Jenkins</h5>
+                                <p class="text-xs text-slate-500">Lead Frontend Engineer at Vercel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="min-w-[450px] bg-slate-50 dark:bg-navy-card p-8 rounded-xl border border-slate-200 dark:border-navy-border relative">
+                        <span
+                            class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-6">format_quote</span>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed italic">
+                            "The code review sessions alone were worth it. Seeing how a senior architect approaches a
+                            pull request changed my entire coding style. Efficiency and readability are now my top
+                            priorities."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-cover bg-center border border-primary"
+                                data-alt="Portrait of a young professional man in a suit"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJxCizwf5AsDpNUAlUIYQVQvo78LiFSIzWEDgINW0kWz6xkyUdh8-3NxwJBc0V4Tt0xn01yc9i1qjXRWavRCIlfno8AAA84i0Hkj5mhHbnadXkOrXQrgGOxGsHJzHnLf7hq9SGB1QOGwTgMtVAXUvlalWPtaJfDgubXzOb3OYtcnCX6lkCbjBjaFnqzR2tYivXUIpUiujnqZmA-Vg54ckufFV6xtZj_gQRYcWcLRDgTnoZohqx9nG4e1cv8Vr5LvXS_hjQkuDXnHRt')">
+                            </div>
+                            <div>
+                                <h5 class="font-bold">David Miller</h5>
+                                <p class="text-xs text-slate-500">Fullstack Developer at Stripe</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="min-w-[450px] bg-slate-50 dark:bg-navy-card p-8 rounded-xl border border-slate-200 dark:border-navy-border relative">
+                        <span
+                            class="material-symbols-outlined text-primary/20 text-6xl absolute top-6 right-6">format_quote</span>
+                        <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed italic">
+                            "I've taken many online courses, but nothing beats the direct feedback of the group
+                            workshops. Alex creates an environment where asking questions is encouraged and everyone
+                            grows together."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full bg-cover bg-center border border-primary"
+                                data-alt="Portrait of a professional woman with glasses"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuATDF75zGSoHJcrhH6gr3P_6-su0SdQRGUz8Ulg0jOo1A4Nf5AJYz5CTBNr77a4WjvZ4TnNDK8L_3W9GdnXcBY8QrCVcDBTbMA9EfHb5QgCKn0X1Bablaj2zjAPvt2lyi48BzcZrU6hV_waLunq3TPAbTE6pTDCG0u-L2wyjI44ZQnF9OnmIcTxoWYOob6e9UsjIdfYrFLLLe1ocqxhIc0rbEjqYaySDe0-yZDP9Zvv2_z5kJhT6PKTZLXB4Lo5LLdhzHu5HL4djVEv')">
+                            </div>
+                            <div>
+                                <h5 class="font-bold">Elena Rodriguez</h5>
+                                <p class="text-xs text-slate-500">Backend Engineer at Meta</p>
+                            </div>
+                        </div>
+                    </div>
                 </div> -->
-
-                <p>No Announcements</p>
-                <!-- Add more cards as needed -->
-            </div>
-        </section>
-
-    </main>
-    <div id="include-footer"></div>
-
-    <script src="include.js"></script>
-
+            </section>
+            <!-- Call to Action -->
+            <section class="px-4 py-12 md:px-12 md:py-24">
+                <div
+                    class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-br from-primary to-purple-700 p-6 md:p-16 text-center text-white relative overflow-hidden glow-blue">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                        <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"></path>
+                                </pattern>
+                            </defs>
+                            <rect fill="url(#grid)" height="100%" width="100%"></rect>
+                        </svg>
+                    </div>
+                    <h2 class="text-2xl md:text-4xl font-black mb-4 md:mb-6 relative z-10">Ready to Level Up Your
+                        Career?</h2>
+                    <p class="text-base md:text-lg text-white/80 mb-6 md:mb-10 max-w-xl mx-auto relative z-10">
+                        Whether you're looking for a one-off consultation or long-term mentorship, I'm here to help you
+                        reach your full potential.
+                    </p>
+                    <div class="relative z-10 flex flex-col items-center gap-6 md:gap-8">
+                        <a href="contact.html"
+                            class="inline-block bg-white text-primary hover:bg-slate-100 px-6 py-3 md:px-10 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-2xl transition-all transform hover:scale-105 active:scale-95">
+                            Contact Me Today
+                        </a>
+                        <div
+                            class="flex flex-col md:flex-row justify-center gap-2 md:gap-8 opacity-80 text-xs md:text-sm font-medium">
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm md:text-base">check_circle</span>
+                                <span>Limited Slots Available</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm md:text-base">check_circle</span>
+                                <span>Free Initial Intro Call</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <portfolio-footer></portfolio-footer>
+        </main>
+    </div>
 </body>
 
 </html>

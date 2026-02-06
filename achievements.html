@@ -1,623 +1,424 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achievements Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .achiev-hero {
-            margin-left: 300px;
-            padding: 40px;
-        }
-
-        .achiev-hero h1 {
-            font-size: 32px;
-            color: #111827;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .subtitle {
-            color: #555;
-            max-width: 800px;
-            text-align: center;
-            margin: 0 auto 30px;
-        }
-
-        .tab-container {
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            margin: auto;
-            max-width: 600px;
-        }
-
-        .tab-button {
-            padding: 15px 30px;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .tab-button.active {
-            background: #eaf1ff;
-            color: #2459e0;
-            font-weight: bold;
-        }
-
-        .tab-content {
-            display: none;
-            margin-top: 30px;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* internship card----------- */
-        .internship-card {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 700px;
-            margin: 20px auto;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .icon-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .icon {
-            background: #eaf0ff;
-            padding: 10px;
-            border-radius: 10px;
-            color: #3a7bfc;
-            font-size: 20px;
-        }
-
-        .card-header h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        .card-header .role {
-            margin: 2px 0 0;
-            font-size: 14px;
-            color: #6b7280;
-        }
-
-        .status {
-            background: #d1fae5;
-            color: #065f46;
-            padding: 6px 12px;
-            font-size: 13px;
-            border-radius: 12px;
-            font-weight: 500;
-        }
-
-        .tags {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-
-        .tags span {
-            background: #f3f4f6;
-            padding: 6px 12px;
-            font-size: 13px;
-            border-radius: 12px;
-            color: #374151;
-        }
-
-        .key-learnings {
-            margin-top: 15px;
-        }
-
-        .key-learnings ul {
-            padding-left: 20px;
-            margin: 8px 0 0;
-            list-style: none;
-        }
-
-        .key-learnings li {
-            margin-bottom: 6px;
-            color: #374151;
-            position: relative;
-            font-size: 14px;
-        }
-
-        .key-learnings li::before {
-            content: '✔';
-            color: #10b981;
-            font-size: 14px;
-            position: absolute;
-            left: -20px;
-            top: 0;
-        }
-
-        .download-btn {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .download-btn .btn {
-            display: inline-block;
-            background: #3a7bfc;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn .btn i {
-            margin-right: 8px;
-        }
-
-        .download-btn .btn:hover {
-            background: #2563eb;
-        }
-
-        /* research paper------------- */
-        .research-card {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 700px;
-            margin: 20px auto;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .icon {
-            background: #eaf0ff;
-            padding: 12px;
-            border-radius: 12px;
-            color: #3a7bfc;
-            font-size: 20px;
-        }
-
-        .award {
-            background: #fef3c7;
-            color: #92400e;
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .research-card h3 {
-            font-size: 18px;
-            margin: 16px 0 6px;
-            color: #111827;
-            font-weight: 600;
-        }
-
-        .type {
-            font-size: 14px;
-            color: #6b7280;
-            margin-bottom: 12px;
-        }
-
-        .type i {
-            margin-right: 6px;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .tags span {
-            background: #f3f4f6;
-            color: #374151;
-            font-size: 13px;
-            padding: 6px 12px;
-            border-radius: 12px;
-        }
-
-        .description {
-            color: #4b5563;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: #3a7bfc;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary i {
-            margin-right: 8px;
-        }
-
-        .btn-primary:hover {
-            background: #2563eb;
-        }
-
-        .btn-secondary {
-            background: #f3f4f6;
-            color: #374151;
-            padding: 10px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .btn-secondary i {
-            margin-right: 8px;
-        }
-
-        /* workshop------------ */
-        .cards-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .icons {
-            font-size: 18px;
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .workshop .icons {
-            background-color: #c1d5fc;
-            color: #0440c3;
-        }
-
-        .seminar .icons {
-            background-color: #cbf9ea;
-            color: #065f46;
-        }
-
-        .webinar .icons {
-            background-color: #dccbfa;
-            color: #4b09be;
-        }
-
-        .course .icons {
-            background-color: #fbdbb1;
-            color: #ff9100;
-        }
-
-        .tag {
-            padding: 4px 12px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 500;
-            color: white;
-        }
-
-        .workshop .tag {
-            background-image: linear-gradient(135deg, #2563eb, #0440c3);
-        }
-
-        .seminar .tag {
-            background-image: linear-gradient(135deg, #10b981, #059062);
-        }
-
-        .webinar .tag {
-            background-image: linear-gradient(135deg, #7c3aed, #4b09be);
-        }
-
-        .course .tag {
-            background-image: linear-gradient(135deg, #ffa600, #ff9100);
-        }
-
-        .card h3 {
-            font-size: 16px;
-            margin: 8px 0;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        .org,
-        .date {
-            font-size: 13px;
-            color: #6b7280;
-        }
-
-        .desc {
-            font-size: 13px;
-            margin: 12px 0;
-            color: #374151;
-            text-align: justify;
-        }
-
-        .btn {
-            background-color: #2563eb;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 12px;
-            transition: 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #1d4ed8;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Achievements | Pritam Pandit Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/components.js"></script>
 </head>
 
-<body>
-    <div id="include-header"></div>
-    <main>
-        <section class="achiev-hero">
-            <h1>Achievements</h1>
-            <p class="subtitle">A comprehensive overview of my professional journey, research contributions, and
-                continuous learning experiences</p>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+    <div class="flex min-h-screen">
+        <portfolio-sidebar></portfolio-sidebar>
+        <main class="flex-1 lg:ml-72 min-h-screen overflow-y-auto custom-scrollbar relative">
+            <!-- Hero Section -->
+            <section
+                class="relative pt-20 pb-12 px-8 flex flex-col items-center justify-center text-center overflow-hidden">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary/5 blur-[120px] rounded-full -z-10">
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
+                    Achievements &amp; <span class="text-primary">Certifications</span>
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                    A collection of verified skills, academic excellence, and technical milestones achieved throughout
+                    my
+                    professional journey.
+                </p>
+            </section>
+            <!-- Filter Bar -->
+            <section class="sticky top-0 z-40 glass-nav border-y border-slate-200 dark:border-slate-800 px-8 py-4 mb-8">
+                <div class="max-w-6xl mx-auto flex flex-wrap gap-3 justify-center">
+                    <button data-filter="all"
+                        class="px-6 py-2 rounded-full bg-primary text-white text-sm font-semibold active-glow transition-all filter-btn">
+                        All Categories
+                    </button>
+                    <button data-filter="academic"
+                        class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-all filter-btn">
+                        Achievements
+                    </button>
+                    <button data-filter="certification"
+                        class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-all filter-btn">
+                        Certifications
+                    </button>
+                    <button data-filter="course"
+                        class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-all filter-btn">
+                        Course
+                    </button>
+                    <button data-filter="research"
+                        class="px-6 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 hover:text-primary transition-all filter-btn">
+                        Research Paper
+                    </button>
+                </div>
+            </section>
+            <!-- Achievement Grid -->
+            <section class="px-8 pb-16 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- card 10 -->
+                    <div data-category="course"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">menu_book</span>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Course</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">Data Analytics</h3>
+                        <p class="text-sm text-primary font-medium mb-2">WEBEL-FUJISOFT-VARA
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            An interactive workshop focused on the fundamentals of Python programming, covering data
+                            types, control structures, functions, and real-world problem-solving through hands-on coding
+                            exercises.
 
-            <div class="tab-container">
-                <button class="tab-button active" onclick="showTab('internship')">Internships</button>
-                <button class="tab-button" onclick="showTab('research')">Research Papers</button>
-                <button class="tab-button" onclick="showTab('workshop')">Workshops</button>
-            </div>
-
-            <div id="internship" class="tab-content active">
-                <div class="internship-card">
-                    <div class="card-header">
-                        <div class="icon-title">
-                            <div class="icon"><i class="fas fa-building"></i></div>
-                            <div>
-                                <h3>WEBEL-FUJISOFT-VARA</h3>
-                                <p class="role">Data Analytics Intern</p>
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">July 2-31, 2024</span>
+                            <div class="flex gap-3">
+                                <a href="" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
                             </div>
                         </div>
-                        <span class="status">Completed</span>
                     </div>
-
-                    <div class="tags">
-                        <span>1 Month</span>
-                        <span>July 2024</span>
-                        <span>BCA Final Year</span>
-                    </div>
-
-                    <div class="key-learnings">
-                        <strong>Key Learnings:</strong>
-                        <ul>
-                            <li>Advanced data visualization techniques using Tableau and Power BI</li>
-                            <li>Statistical analysis and predictive modeling with Python</li>
-                            <li>Database management and SQL optimization</li>
-                        </ul>
-                    </div>
-
-                    <div class="download-btn">
-                        <a href="./img/internship-DA.pdf" class="btn" target="_blank">
-                            <i class="fas fa-download"></i> Download Certificate
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="research" class="tab-content">
-                <div class="research-card">
-                    <div class="card-header">
-                        <div class="icon"><i class="fas fa-file-alt"></i></div>
-                        <span class="award">Pending</span>
-                    </div>
-
-                    <h3>Cybersecurity in the age of AI : Attack and Prevent</h3>
-                    <p class="type"><i class="fa-solid fa-people-group"></i> Team Research (2 Authors)</p>
-
-                    <div class="tags">
-                        <span>FOSET Conference</span>
-                        <span>March 2023</span>
-                        <span>AI in CyberSecurity</span>
-                    </div>
-
-                    <p class="description">
-                        This paper explores how artificial intelligence is both a tool and a target in the evolving
-                        cybersecurity landscape. It analyzes modern AI-driven cyberattacks and presents countermeasures
-                        leveraging AI for threat detection, prevention, and adaptive security systems.
-                    </p>
-
-                    <div class="buttons">
-                        <a href="./img/CyberSecurity in the age of AI(ajac).pdf" class="btn-primary" target="_blank"><i
-                                class="fas fa-book-open"></i> View Paper</a>
-                        <a href="./img/FOSET.pdf" class="btn-secondary" target="_blank"><i class="fas fa-download"></i>
-                            Certificate</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="workshop" class="tab-content">
-                <div class="cards-container">
-
-                    <div class="card">
-                        <div class="card-header workshop">
-                            <span class="icons"><i class="fa-solid fa-screwdriver-wrench"></i></span>
-                            <span class="tag">Workshop</span>
+                    <!-- card 9 -->
+                    <div data-category="academic"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">co_present</span>
                         </div>
-                        <h3>PYTHON WORKSHOP</h3>
-                        <p class="org">Organized by: KSHITIJ 2024,IIT KHARAGPUR</p>
-                        <p class="date">Jan 20-21, 2024</p>
-                        <p class="desc">"An interactive workshop focused on the fundamentals of Python programming,
-                            covering data types, control structures, functions, and real-world problem-solving through
-                            hands-on coding exercises."</p>
-                        <a href="./img/python-workshop.pdf" class="btn" target="_blank">Download Certificate</a>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header course">
-                            <span class="icons"><i class="fa-solid fa-graduation-cap"></i></span>
-                            <span class="tag">Course</span>
-                        </div>
-                        <h3>Data Analysis with Python</h3>
-                        <p class="org">MachineLearning.org.in</p>
-                        <p class="date">Dec 24, 2023</p>
-                        <p class="desc">"Completed a course on Data Analysis with Python, focusing on data wrangling,
-                            visualization, and statistical analysis using libraries like Pandas, NumPy, and Matplotlib."
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Achievement</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">Research Paper Presentation</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: Forum of Scientist Engineers &
+                            Technologists (FOSET)
                         </p>
-                        <a href="./img/DA-Python.pdf" class="btn" target="_blank">Download Certificate</a>
-                    </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            This paper explores how artificial intelligence is both a tool and a target in the evolving
+                            cybersecurity landscape. It analyzes modern AI-driven cyberattacks and presents
+                            countermeasures leveraging AI for threat detection, prevention, and adaptive security
+                            systems.
 
-                    <div class="card">
-                        <div class="card-header workshop">
-                            <span class="icons"><i class="fa-solid fa-screwdriver-wrench"></i></span>
-                            <span class="tag">Workshop</span>
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">May 12, 2024</span>
+                            <div class="flex gap-3">
+                                <a href="img/FOSET.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
                         </div>
-                        <h3>Cyber Security Workshop</h3>
-                        <p class="org">Organized by: Digi Samurai</p>
-                        <p class="date">Oct 01, 2023</p>
-                        <p class="desc">"Participated in a hands-on workshop on Cybersecurity, exploring essential
-                            topics like ethical hacking, network security, and best practices for protecting digital
-                            infrastructure."</p>
-                        <a href="./img/Digi Samurai.pdf" class="btn" target="_blank">Download Certificate</a>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header course">
-                            <span class="icons"><i class="fa-solid fa-graduation-cap"></i></span>
-                            <span class="tag">Course</span>
+                    <!-- card 9 -->
+                    <div data-category="research"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">article</span>
                         </div>
-                        <h3>HTML, CSS, and Javascript for Web Developers</h3>
-                        <p class="org">Coursera (Johns Hopkins University)</p>
-                        <p class="date">July 07 - Aug 21, 2023</p>
-                        <p class="desc">"Completed a comprehensive Coursera course on Front-End Web Development,
-                            covering the fundamentals of HTML, CSS, and JavaScript. Gained hands-on experience in
-                            building responsive and interactive user interfaces."</p>
-                        <a href="./img/Coursera-webDev.pdf" class="btn" target="_blank">Download Certificate</a>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Research
+                            Paper</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">Cybersecurity in the age of AI : Attack and
+                            Prevent</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: Forum of Scientist Engineers &
+                            Technologists (FOSET)
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            This paper explores how artificial intelligence is both a tool and a target in the evolving
+                            cybersecurity landscape. It analyzes modern AI-driven cyberattacks and presents
+                            countermeasures leveraging AI for threat detection, prevention, and adaptive security
+                            systems.
+
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">May 12, 2024</span>
+                            <div class="flex gap-3">
+                                <a href="img/CyberSecurity in the age of AI(ajac).pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header webinar">
-                            <span class="icons"><i class="fa-solid fa-desktop"></i></span>
-                            <span class="tag">Webinar</span>
+                    <!-- card 8 -->
+                    <div data-category="certification"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">code</span>
                         </div>
-                        <h3>BIOINFESTO-2023</h3>
-                        <p class="org">Organized by: Department of Bioinformatics, MAKAUT</p>
-                        <p class="date">Aug 12 & 13, 2023</p>
-                        <p class="desc">"Focused on emerging trends in bioinformatics, including genomics, data
-                            analysis, and
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Workshop</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">PYTHON WORKSHOP</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: KSHITIJ 2024,IIT KHARAGPUR
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            An interactive workshop focused on the fundamentals of Python programming, covering data
+                            types, control structures, functions, and real-world problem-solving through hands-on coding
+                            exercises.
+
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">Jan 20-21, 2024</span>
+                            <div class="flex gap-3">
+                                <a href="img/python-workshop.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 7 -->
+                    <div data-category="course"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">analytics</span>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Course</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">Data Analysis with Python</h3>
+                        <p class="text-sm text-primary font-medium mb-2">MachineLearning.org.in
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Completed a course on Data Analysis with Python, focusing on data wrangling, visualization,
+                            and statistical analysis using libraries like Pandas, NumPy, and Matplotlib.
+
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">Dec 10-24, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/DA-Python.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 6 -->
+                    <div data-category="certification"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">security</span>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Workshop</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">Cyber Security Workshop</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: Digi Samurai
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Participated in a hands-on workshop on Cybersecurity, exploring essential topics like
+                            ethical hacking, network security, and best practices for protecting digital infrastructure.
+
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">Oct 01, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/Digi Samurai.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 5 -->
+                    <div data-category="course"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">html</span>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Course</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">HTML, CSS, and Javascript for Web Developers
+                        </h3>
+                        <p class="text-sm text-primary font-medium mb-2">Coursera (Johns Hopkins University)
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Completed a comprehensive Coursera course on Front-End Web Development, covering the
+                            fundamentals of HTML, CSS, and JavaScript. Gained hands-on experience in building responsive
+                            and interactive user interfaces.
+
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">july 07 - Aug 21, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/Coursera-webDev.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div data-category="certification"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">biotech</span>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Webinar</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">BIOINFESTO-2023</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: Department of Bioinformatics,
+                            MAKAUT
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Focused on emerging trends in bioinformatics, including genomics, data analysis, and
                             computational biology. The session aimed to bridge interdisciplinary research and real-world
-                            applications in life sciences."</p>
-                        <a href="./img/BIOINFESTO.pdf" class="btn" target="_blank">Download Certificate</a>
-                    </div>
+                            applications in life sciences.
 
-                    <div class="card">
-                        <div class="card-header webinar">
-                            <span class="icons"><i class="fa-solid fa-desktop"></i></span>
-                            <span class="tag">Webinar</span>
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">Aug 12 & 13, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/BIOINFESTO.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
                         </div>
-                        <h3>Innovation / Prototype Validation - Converting Innovation into a Startup</h3>
-                        <p class="org">Organized by: IIC CELL & EKTA Incubation Center, MAKAUT</p>
-                        <p class="date">July 22, 2023</p>
-                        <p class="desc">"Participated in a workshop focused on transforming innovative ideas into viable
-                            startup ventures. Covered key aspects such as prototype validation, business model
-                            development, and the entrepreneurial journey from concept to launch."</p>
-                        <a href="./img/start-up webinar.pdf" class="btn" target="_blank">Download Certificate</a>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header seminar">
-                            <span class="icons"><i class="fa-solid fa-person-chalkboard"></i></span>
-                            <span class="tag">Seminar</span>
+                    <!-- Card  3-->
+                    <div data-category="certification"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">lightbulb</span>
                         </div>
-                        <h3>IP Awareness/Training program</h3>
-                        <p class="org">Organized by: Intellectual Property Office, India</p>
-                        <p class="date">July 13, 2023</p>
-                        <p class="desc">"Attended an IP (Intellectual Property) Awareness/Training Program focusing on
-                            the fundamentals of patents, copyrights, and trademarks, aimed at promoting innovation and
-                            understanding legal protections for creative works."</p>
-                        <a href="./img/IPR_EVENT.pdf" class="btn" target="_blank">Download Certificate</a>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Webinar</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">Innovation / Prototype Validation -
+                            Converting Innovation into a Startup</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: IIC CELL & EKTA Incubation
+                            Center, MAKAUT
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Participated in a workshop focused on transforming innovative ideas into viable startup
+                            ventures. Covered key aspects such as prototype validation, business model development, and
+                            the entrepreneurial journey from concept to launch.
+
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">July 22, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/start-up webinar.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-header webinar">
-                            <span class="icons"><i class="fa-solid fa-desktop"></i></span>
-                            <span class="tag">Webinar</span>
+                    <!-- Card  2-->
+                    <div data-category="certification"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">copyright</span>
                         </div>
-                        <h3>DATA SCIENCE</h3>
-                        <p class="org">Organized by: Department of CS, GCST</p>
-                        <p class="date">Jan 04, 2023</p>
-                        <p class="desc">"Attended a webinar on Data Science that covered core concepts like data
-                            preprocessing, model building, and industry use cases, offering valuable insights into
-                            real-world applications of data science."</p>
-                        <a href="./img/Data science.pdf" class="btn" target="_blank">Download Certificate</a>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Seminar</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">IP Awareness/Training program</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: Intellectual Property Office,
+                            India</p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Attended an IP (Intellectual Property) Awareness/Training Program focusing on the
+                            fundamentals of patents, copyrights, and trademarks, aimed at promoting innovation and
+                            understanding legal protections for creative works.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">July 13, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/IPR_EVENT.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card  1-->
+                    <div data-category="certification"
+                        class="achievement-card bg-white dark:bg-card-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 card-hover transition-all duration-300 flex flex-col group">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-3xl">science</span>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Webinar</span>
+                        <h3 class="text-xl font-bold mb-1 dark:text-white">DATA SCIENCE</h3>
+                        <p class="text-sm text-primary font-medium mb-2">Organized by: Department of CS, GCST</p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                            Attended a webinar on Data Science that covered core concepts like data preprocessing, model
+                            building, and industry use cases, offering valuable insights into real-world applications of
+                            data science.
+                        </p>
+                        <div class="mt-auto flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500">Jan 04, 2023</span>
+                            <div class="flex gap-3">
+                                <a href="img/Data science.pdf" target="_blank"
+                                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold hover:bg-primary hover:text-white transition-all">
+                                    <span>Preview</span>
+                                    <span class="material-symbols-outlined text-sm">visibility</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-            </div>
-        </section>
+            <portfolio-footer></portfolio-footer>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.achievement-card');
 
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-white', 'active-glow');
+                        b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                    });
+                    btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                    btn.classList.add('bg-primary', 'text-white', 'active-glow');
 
-    </main>
-    <div id="include-footer"></div>
+                    const filter = btn.getAttribute('data-filter');
 
-    <script src="include.js"></script>
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

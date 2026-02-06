@@ -1,259 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .contact-hero {
-            text-align: center;
-            margin-left: 300px;
-            padding: 40px;
-            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        .contact-hero h1 {
-            font-size: 40px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .contact-hero p {
-            font-size: 14px;
-            color: #f1f1f1;
-            line-height: 1.6;
-        }
-
-        /* contact info----------------- */
-        .contact-info-section {
-            margin-left: 300px;
-            padding: 40px;
-        }
-
-        .contact-box {
-            background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 2px 8px 12px rgba(0, 0, 0, 0.2);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 30px;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .info-item .icon {
-            background-color: #e6efff;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 18px;
-            color: #5380fc;
-        }
-
-        .info-item h4 {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #1a1a1a;
-        }
-
-        .info-item p {
-            font-size: 14px;
-            color: #6b7280;
-        }
-
-        /* map------------- */
-        .location {
-            margin-left: 300px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .map {
-            max-width: 800px;
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 16px;
-        }
-
-        /* social media------------ */
-        .social-section {
-            margin-left: 300px;
-            padding: 40px;
-        }
-
-        .social-section h2 {
-            font-size: 26px;
-            text-align: center;
-            color: #0f172a;
-            margin-bottom: 25px;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .social-media .icon {
-            text-decoration: none;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
-            font-size: 20px;
-            color: #626b78;
-            transition: all 0.3s ease;
-        }
-
-        .linkedin:hover {
-            scale: 1.1;
-            color: #4470f4;
-        }
-
-        .github:hover {
-            scale: 1.1;
-            color: #202020;
-        }
-
-        .fb:hover {
-            scale: 1.1;
-            color: #4499f4;
-        }
-
-        .insta:hover {
-            scale: 1.1;
-            color: #7644f4;
-        }
-
-        .yt:hover {
-            scale: 1.1;
-            color: #f44444;
-        }
-        /* visit now------------ */
-        .looking{
-            margin-left: 300px;
-            padding: 40px;
-        }
-        .visit-now{
-            padding: 40px;
-            background-image: linear-gradient(135deg, #eefdff, #e9ffe9);
-            border-radius: 12px;
-            text-align: center;
-        }
-        .visit-now p{
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: #202020;
-        }
-        .visit-now a{
-            text-decoration: none;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 8px;
-            background-color: #2a87eb;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all .3s ease;
-        }
-        .visit-now a:hover{
-            background-color: #3668ef;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact | Pritam Pandit Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/components.js"></script>
 </head>
 
-<body>
-    <div id="include-header"></div>
-    <main>
-        <section class="contact-hero">
-            <h1>Let's Get in Touch</h1>
-            <p>
-                Whether you have a project idea, need guidance, are looking for tuition, want to collaborate, or promote
-                something —<br>
-                I'm always happy to connect.
-            </p>
-        </section>
-
-        <section class="contact-info-section">
-            <div class="contact-box">
-                <div class="info-item">
-                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                    <div>
-                        <h4>Phone / WhatsApp</h4>
-                        <p>+91 7719332510</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="icon"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <h4>Email</h4>
-                        <p>panditpritam399@gmail.com</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div>
-                        <h4>Location</h4>
-                        <p>Karimpur, Nadia-741152, West Bengal, India</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <div class="icon"><i class="fas fa-clock"></i></div>
-                    <div>
-                        <h4>Available</h4>
-                        <p>Mon–Sat, 10 AM – 8 PM IST</p>
-                    </div>
-                </div>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+    <div class="flex min-h-screen">
+        <portfolio-sidebar></portfolio-sidebar>
+        <main class="flex-1 lg:ml-72 min-h-screen overflow-y-auto custom-scrollbar relative">
+            <!-- Abstract Background Glow Elements -->
+            <div
+                class="absolute top-0 right-0 -z-10 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none">
             </div>
-        </section>
-
-        <section class="location">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d227.83231514195396!2d88.63728185494978!3d23.98457909250349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1753509314053!5m2!1sen!2sin"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
-        </section>
-
-        <section class="social-section">
-            <h2>Follow me on social media</h2>
-            <div class="social-media">
-                <a href="https://www.linkedin.com/in/pritam-pandit-7b9b3933b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/Pritam1926/" class="icon github"><i class="fab fa-github"></i></a>
-                <a href="https://www.facebook.com/share/16wecNzKUd/" class="icon fb"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/pritam.pandit.12139/" class="icon insta"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@codergoals?si=MQjAIVezH1bicpaI" class="icon yt"><i class="fab fa-youtube"></i></a>
+            <div
+                class="absolute bottom-0 left-1/4 -z-10 w-[500px] h-[500px] bg-primary/5 blur-[150px] rounded-full pointer-events-none">
             </div>
-        </section>
 
-        <section class="looking">
-            <div class="visit-now">
-                <p>Looking for tuition, tech mentorship, or career help? Visit my EdTech platform ZodeTech</p>
-                <a href="zodetech.html" target="_blank">Visit Now</a>
+            <div class="max-w-5xl mx-auto px-8 py-16">
+                <!-- Page Intro -->
+                <header class="text-center mb-16 pt-8">
+                    <h1
+                        class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-400 dark:to-white">
+                        Contact Me</h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">Have a project in mind or
+                        just
+                        want to say hi? I'd love to hear from you. Let's create something extraordinary together.</p>
+                </header>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Contact Info Cards -->
+                    <div class="lg:col-span-1 flex flex-col gap-6">
+                        <div
+                            class="p-6 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 flex items-center gap-5 hover:border-primary/50 transition-all group shadow-sm">
+                            <div
+                                class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined">alternate_email</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Email Address</p>
+                                <p class="font-bold text-sm text-slate-900 dark:text-white">contact.pritam1926@gmail.com
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-6 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 flex items-center gap-5 hover:border-primary/50 transition-all group shadow-sm">
+                            <div
+                                class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined">call</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Phone Number</p>
+                                <p class="font-bold text-sm text-slate-900 dark:text-white">+91 77193 32510</p>
+                            </div>
+                        </div>
+                        <div
+                            class="p-6 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 flex items-center gap-5 hover:border-primary/50 transition-all group shadow-sm">
+                            <div
+                                class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Office Location</p>
+                                <p class="font-bold text-sm text-slate-900 dark:text-white">Kolkata, West Bengal</p>
+                            </div>
+                        </div>
+                        <!-- Social Icons -->
+                        <!-- <div
+                            class="mt-4 p-6 rounded-xl bg-gradient-to-br from-primary/5 to-transparent border border-primary/10">
+                            <p class="text-sm font-bold mb-6 text-center uppercase tracking-widest text-primary">Follow
+                                My
+                                Journey</p>
+                            <div class="flex justify-center gap-4">
+                                <a class="size-12 rounded-full flex items-center justify-center bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 hover:scale-110 hover:border-primary text-slate-600 dark:text-slate-400 hover:text-primary transition-all glow-hover"
+                                    href="https://github.com/Pritam1926" target="_blank" rel="noopener noreferrer">
+                                    <span class="material-symbols-outlined">terminal</span>
+                                </a>
+                                <a class="size-12 rounded-full flex items-center justify-center bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 hover:scale-110 hover:border-primary text-slate-600 dark:text-slate-400 hover:text-primary transition-all glow-hover"
+                                    href="https://www.linkedin.com/in/pritam-pandit-00057121b" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="material-symbols-outlined">hub</span>
+                                </a>
+                                <a class="size-12 rounded-full flex items-center justify-center bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 hover:scale-110 hover:border-primary text-slate-600 dark:text-slate-400 hover:text-primary transition-all glow-hover"
+                                    href="#" target="_blank" rel="noopener noreferrer">
+                                    <span class="material-symbols-outlined">public</span>
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- Contact Form Section -->
+                    <div class="lg:col-span-2">
+                        <div
+                            class="p-8 rounded-xl bg-white dark:bg-card-dark border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden">
+                            <!-- Card Accent -->
+                            <div
+                                class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16">
+                            </div>
+                            <h3 class="text-2xl font-bold mb-8 text-slate-900 dark:text-white">Send a Message</h3>
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label class="text-sm font-medium text-slate-500 dark:text-slate-400 px-1">Full
+                                            Name</label>
+                                        <input id="name" required
+                                            class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm focus:outline-none input-glow transition-all text-slate-900 dark:text-white"
+                                            placeholder="John Doe" type="text" />
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-sm font-medium text-slate-500 dark:text-slate-400 px-1">Email
+                                            Address</label>
+                                        <input id="email" required
+                                            class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm focus:outline-none input-glow transition-all text-slate-900 dark:text-white"
+                                            placeholder="john@example.com" type="email" />
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-sm font-medium text-slate-500 dark:text-slate-400 px-1">Subject</label>
+                                    <input id="subject" required
+                                        class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm focus:outline-none input-glow transition-all text-slate-900 dark:text-white"
+                                        placeholder="Project Inquiry" type="text" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-sm font-medium text-slate-500 dark:text-slate-400 px-1">Message</label>
+                                    <textarea id="message" required
+                                        class="w-full bg-slate-50 dark:bg-background-dark border border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm focus:outline-none input-glow transition-all resize-none text-slate-900 dark:text-white"
+                                        placeholder="Tell me about your project..." rows="6"></textarea>
+                                </div>
+                                <button
+                                    class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 transition-all shadow-lg shadow-primary/30 group"
+                                    type="submit">
+                                    <span>Send Message</span>
+                                    <span
+                                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Final CTA -->
+                <section class="mt-24 text-center">
+                    <div
+                        class="p-12 rounded-2xl bg-gradient-to-r from-primary/20 via-primary/5 to-transparent border border-primary/10">
+                        <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Ready to start?</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto">Skip the form and jump
+                            straight
+                            into a conversation. I'm usually available for a quick chat.</p>
+                        <a href="mailto:contact.pritam1926@gmail.com"
+                            class="inline-block px-8 py-3 bg-white dark:bg-white text-primary dark:text-primary font-bold rounded-lg hover:scale-105 transition-all shadow-xl">
+                            Get In Touch
+                        </a>
+                    </div>
+                </section>
             </div>
-        </section>
-    </main>
-    <div id="include-footer"></div>
+            <portfolio-footer></portfolio-footer>
+        </main>
+    </div>
 
-    <script src="include.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+            const mailtoLink = `mailto:contact.pritam1926@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            window.open(mailtoLink, '_blank');
+        });
+    </script>
 </body>
 
 </html>

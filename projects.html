@@ -1,573 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .project-hero {
-            margin-left: 300px;
-            padding: 40px;
-            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            text-align: center;
-        }
-
-        .project-hero h1 {
-            font-size: 32px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .project-hero p {
-            font-size: 14px;
-            color: #f1f1f1;
-            line-height: 1.6;
-        }
-
-        /* project cards------------ */
-        .project-showcase {
-            margin-left: 300px;
-            padding: 40px;
-            display: flex;
-            gap: 30px;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .project-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-card img {
-            max-width: 450px;
-            border-radius: 15px 0 0 0;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .project-details {
-            padding: 15px;
-            /* text-align: justify; */
-        }
-
-        .project-details h3 {
-            font-size: 15px;
-            color: #111827;
-            margin-bottom: 15px;
-        }
-
-        .project-details .type {
-            font-size: 10px;
-            font-weight: 600;
-            padding: 6px 10px;
-            display: inline-block;
-            background-color: #3c77df;
-            color: #fff;
-            border-radius: 10px;
-        }
-
-        .project-details .team {
-            color: #6b7280;
-            font-size: 11px;
-        }
-
-        .project-details .purpose {
-            font-size: 12px;
-            color: #111827;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .project-details .description {
-            font-size: 12px;
-            color: #363940;
-            margin-top: 10px;
-            line-height: 1.4;
-        }
-
-        .project-details ul {
-            font-size: 12px;
-            color: #363940;
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        .project-details h4 {
-            color: #111827;
-            font-size: 13px;
-            margin-top: 15px;
-        }
-
-        .project-details .tech-stack {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 12px;
-            margin-top: 10px;
-        }
-
-        .tech-stack span {
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-weight: 500;
-        }
-
-        .html {
-            background-image: linear-gradient(135deg, #f06529, #e34c26);
-            color: #fff;
-        }
-
-        .css {
-            background-image: linear-gradient(135deg, #2965f1, #264de4);
-            color: #fff;
-        }
-
-        .js {
-            background-image: linear-gradient(135deg, #f0db4f, #eacb00);
-        }
-
-        .php {
-            background-image: linear-gradient(135deg, #787CB5, #474A8A);
-            color: #fff;
-        }
-
-        .mysql {
-            background-image: linear-gradient(90deg, #F29111, #00758F);
-            color: #fff;
-        }
-
-        .responsibility {
-            color: #363940;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .outcome {
-            font-size: 12px;
-            color: #363940;
-            margin-top: 5px;
-        }
-
-        .repo {
-            text-decoration: none;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 10px;
-            background-color: #2965f1;
-            font-size: 14px;
-            transition: all .3s ease;
-        }
-
-        .repo:hover {
-            background-color: #264de4;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Projects | Pritam Pandit Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/components.js"></script>
 </head>
 
-<body>
-    <div id="include-header"></div>
-    <main>
-        <section class="project-hero">
-            <h1>My Projects</h1>
-            <p>A collection of projects showcasing my journey in web development, from concept to deployment</p>
-        </section>
-
-        <section class="project-showcase">
-            <!-- portfolio website -->
-            <div class="project-card">
-                <img src="./img/pro4.png" alt="project-img">
-                <div class="project-details">
-                    <h3>Portfolio Website <span class="type" style="background-color: #667eea;">Personal</span></h3>
-
-                    <span class="team"><i class="fa-solid fa-calendar"></i> July 2025</span> <br>
-
-                    <span class="team"><i class="fa-solid fa-people-line"></i> Individual</span>
-
-                    <p class="purpose">Purpose: The purpose of this project was to build a professional and personalized
-                        portfolio website to showcase my educational background, skills, projects, achievements,
-                        services, and online presence — all in one place.</p>
-
-                    <p class="description">This portfolio website is a fully responsive, SEO-optimized static site
-                        developed using HTML, CSS, and JavaScript. It features multiple pages including Home, About,
-                        Projects, Achievements, Resume, Services, Teaching, Social, Contact, and Blog. The design is
-                        minimal yet impactful, with a fixed sidebar for easy navigation and a clean layout for
-                        readability. <br>
-
-                        The site includes a custom hero section with typewriter animation, dynamic sections for featured
-                        work, student testimonials, and integrated contact options (WhatsApp, call, email, etc.). It
-                        also serves as a mini platform for promoting my edtech venture ZodeTech, offering access to
-                        resources and student programs. <br>
-
-                        This project reflects my design sense, frontend expertise, and dedication to providing value
-                        through digital presence.
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+    <div class="flex min-h-screen">
+        <portfolio-sidebar></portfolio-sidebar>
+        <main class="flex-1 lg:ml-72 min-h-screen overflow-y-auto custom-scrollbar">
+            <div class="max-w-7xl mx-auto px-4 py-8 md:px-12 md:py-16">
+                <!-- Section 1: Intro -->
+                <section class="max-w-6xl mx-auto px-4 md:px-8 pt-16 pb-8 text-center">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
+                        Featured <span class="text-primary">Projects</span>
+                    </h1>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                        A collection of high-impact technical works, ranging from enterprise dashboards to experimental
+                        AI
+                        interfaces.
                     </p>
-
-                    <h4>
-                        <> Tech Stack
-                    </h4>
-                    <div class="tech-stack">
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                        <span class="js">JavaScript</span>
+                </section>
+                <!-- <section class="max-w-6xl mx-auto px-8 mb-12">
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <button
+                            class="px-6 py-2.5 rounded-full text-sm font-bold bg-primary text-white shadow-lg shadow-primary/30 transition-all">All</button>
+                        <button
+                            class="px-6 py-2.5 rounded-full text-sm font-bold bg-white dark:bg-card-dark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">Full-stack</button>
+                        <button
+                            class="px-6 py-2.5 rounded-full text-sm font-bold bg-white dark:bg-card-dark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">Mobile</button>
+                        <button
+                            class="px-6 py-2.5 rounded-full text-sm font-bold bg-white dark:bg-card-dark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">Open
+                            Source</button>
+                        <button
+                            class="px-6 py-2.5 rounded-full text-sm font-bold bg-white dark:bg-card-dark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">UI/UX</button>
                     </div>
-
-                    <h4>Role & Contribution</h4>
-                    <p class="responsibility">
-                        I developed this portfolio website entirely on my own as a static site using HTML, CSS, and
-                        JavaScript. From design planning to coding each section — everything was done independently to
-                        reflect my personality, skills, and professional journey.
-                    </p>
-
-                    <h4>Challenges Fased</h4>
-                    <p class="outcome">Since it was a static website and I had a clear plan in mind, I didn’t face any
-                        major challenges during the development.</p>
-
-                    <h4>Learning Outomes</h4>
-                    <p class="outcome">
-                        Through this project, I improved my frontend development skills, deepened my understanding of
-                        user interface and responsive design principles, and learned how to organize large amounts of
-                        content in a clean, navigable format. It also helped me explore better SEO practices, structure
-                        my achievements for a professional audience, and establish a unified digital identity that
-                        highlights my roles as a developer, instructor, and mentor.
-                    </p> <br>
-
-                    <a href="https://github.com/Pritam1926/pritam-pandit" class="repo"
-                        target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
-                    <a href="https://pritam1926.github.io/pritam-pandit/" class="repo" style="background-color: #F29111; color: #111827;"
-                        target="_blank">Live Demo</a>
-                </div>
-            </div>
-
-            <!-- dr appointment booking system -->
-            <div class="project-card">
-                <img src="./img/pro1.png" alt="project-img">
-                <div class="project-details">
-                    <h3>Online Dr Appointment Booking System <span class="type">BCA Major</span></h3>
-
-                    <span class="team"><i class="fa-solid fa-calendar"></i> March 2025 - May 2025</span> <br>
-
-                    <span class="team"><i class="fa-solid fa-people-line"></i> Team of 5: Pritam Pandit, Tanisha
-                        Chakraborty, Roumik Das, Deep Choudhury, Manab Chanda</span>
-
-                    <p class="purpose">Purpose: The goal was
-                        to simplify and digitize the healthcare appointment process for better accessibility.</p>
-
-                    <p class="description">The platform was developed with a focus on simplicity, security, and
-                        scalability, making it ideal for clinics, small hospitals, or solo practitioners aiming to go
-                        digital. <br>
-                        This web-based application allows patients to:
-                    <ul>
-                        <li>Search for doctors using filters like location, specialization, availability....</li>
-                        <li>View detailed profiles of doctors before booking.</li>
-                        <li>Book appointments instantly with confirmation via email.</li>
-                        <li>Manage their bookings, reschedule or cancel easily.</li>
-                    </ul>
-                    <p class="description">Doctors, on the other hand, can:</p>
-                    <ul>
-                        <li>Set their availability schedule.</li>
-                        <li>Accept or reject appointments.</li>
-                        <li>Manage patient records and track appointments.</li>
-                    </ul>
-                    </p>
-
-                    <h4>
-                        <> Tech Stack
-                    </h4>
-                    <div class="tech-stack">
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                        <span class="js">JavaScript</span>
-                        <span class="php">PHP</span>
-                        <span class="mysql">MySQL</span>
+                </section> -->
+                <section
+                    class="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                    <!-- project 5 -->
+                    <div
+                        class="project-card group bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 transition-all duration-300 flex flex-col">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10">
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="E-commerce dashboard with analytics charts"
+                                style="background-image: url('img/pro4.png');">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">HTML</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">CSS</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">Tailwind</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">JavaScript</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">July 2025</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">groups</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Individual</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Portfolio Website</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                                To build a professional and personalized portfolio website to showcase my educational
+                                background, skills, projects, achievements, services, and online presence — all in one
+                                place.
+                            </p>
+                            <div class="flex gap-3 mt-auto">
+                                <a href="https://pritam1926.github.io/pritam-pandit/index.html" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="flex-1 glow-button bg-primary text-white h-10 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center">Live
+                                    Demo</a>
+                                <a href="https://github.com/Pritam1926/pritam-pandit" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="px-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/5 h-10 rounded-lg text-slate-600 dark:text-slate-300 transition-all flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px] align-middle">code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <h4>Role & Contribution</h4>
-                    <p class="responsibility">
-                        I worked as a Backend Developer and Security Lead in this project. My key responsibilities
-                        included:
-                    <ul>
-                        <li>Designing and building the backend architecture for smooth data flow.</li>
-                        <li>Implementing authentication and authorization to secure both patient and doctor data.</li>
-                        <li>Ensuring data encryption and protection of personal health information.</li>
-                        <li>Working with the database for efficient appointment management and doctor-patient linking.
-                        </li>
-                    </ul>
-                    </p>
-
-                    <h4>Challenges Fased</h4>
-                    <ul>
-                        <li>Backend integration with UI</li>
-                        <li>Appointment conflict resolution</li>
-                        <li>Real-time feedback & search</li>
-                        <li>Role-based dashboard routing</li>
-                    </ul>
-
-                    <h4>Learning Outomes</h4>
-                    <p class="outcome">
-                        Through this project, I gained practical experience in backend development, data handling, and
-                        implementing secure user authentication. I also deepened my understanding of real-world system
-                        design, optimized database queries, and improved my problem-solving skills by addressing
-                        real-time challenges in healthcare tech solutions. Additionally, collaborating within a team
-                        enhanced my project management and communication abilities.
-                    </p> <br>
-
-                    <a href="https://github.com/Pritam1926/Dr-Appointment-Booking-System" class="repo"
-                        target="_blank"><i class="fa-brands fa-github"></i> GitHub Repo</a>
-                    <a href="demo.html" class="repo" style="background-color: #F29111; color: #111827;"
-                        target="_blank">Live Demo</a>
-                </div>
-            </div>
-
-            <!-- task manager -->
-            <div class="project-card">
-                <img src="./img/pro5.png" alt="project-img">
-                <div class="project-details">
-                    <h3>Task Manager <span class="type" style="background-color: #667eea;">Personal</span>
-                    </h3>
-
-                    <span class="team"><i class="fa-solid fa-calendar"></i> May 2025</span> <br>
-
-                    <span class="team"><i class="fa-solid fa-people-line"></i> Individual</span>
-
-                    <p class="purpose">Purpose: It focuses on creating a private workspace for each user to track,
-                        update, and organize tasks without interference — useful for students, professionals, or small
-                        teams.</p>
-
-                    <p class="description">he Task Manager is a user-specific web application that allows individuals to
-                        securely log in and manage their daily tasks from a dedicated portal. Once logged in, users can
-                        add, edit, mark as complete, or delete tasks as per their needs. Each user has an isolated
-                        dashboard where all tasks are stored and updated in real-time. <br>
-
-                        This project aims to help users stay organized, track their daily responsibilities, and maintain
-                        productivity in both personal and professional workflows. Features like deadline setting, status
-                        toggling, and priority tagging were included to enhance usability and task visibility.
-
-                    </p>
-
-                    <h4>
-                        <> Tech Stack
-                    </h4>
-                    <div class="tech-stack">
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                        <span class="php">PHP</span>
-                        <span class="mysql">MySQL</span>
+                    <!-- project 4 -->
+                    <div
+                        class="project-card group bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 transition-all duration-300 flex flex-col">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10">
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="SaaS analytics platform cloud monitoring interface"
+                                style="background-image: url('img/pro1.png');">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">HTML</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">CSS</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">JavaScript</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">PHP</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">MySQL</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Mar 2025 – May
+                                        2025</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">groups</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Team Project</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Online Dr Appointment
+                                Booking System</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                                The goal was to simplify and digitize the healthcare appointment process for better
+                                accessibility.
+                            </p>
+                            <div class="flex gap-3 mt-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1 glow-button bg-primary text-white h-10 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center">Live
+                                    Demo</a>
+                                <a href="https://github.com/Pritam1926/Dr-Appointment-Booking-System" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="px-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/5 h-10 rounded-lg text-slate-600 dark:text-slate-300 transition-all flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px] align-middle">code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <h4>Role & Contribution</h4>
-                    <p class="responsibility">
-                        I developed the entire project independently — from UI design to backend logic. Key
-                        responsibilities included:
-                    <ul>
-                        <li>Building secure user authentication (login/signup).</li>
-                        <li>Creating a dynamic dashboard for task creation, editing, and deletion.</li>
-                        <li>Designing UI/UX with a focus on simplicity and productivity.</li>
-                        <li>Managing user-specific task data with backend integration.</li>
-                        <li>Ensuring data integrity and real-time UI updates.</li>
-                    </ul>
-                    </p>
-
-                    <h4>Challenges Fased</h4>
-                    <ul>
-                        <li>Writing scalable logic to dynamically handle task updates and UI rendering</li>
-                        <li>Maintaining data separation for individual users</li>
-                        <li>Implementing a smooth user experience with proper input validation and task state tracking
-                        </li>
-                    </ul>
-
-                    <h4>Learning Outomes</h4>
-                    <p class="outcome">
-                    <ul>
-                        <li>Gained real-world experience in building full-stack dynamic applications</li>
-                        <li>Learned to manage user sessions, data flow, and CRUD operations securely</li>
-                        <li>Strengthened my skills in JavaScript, form handling, and DOM manipulation</li>
-                        <li>Improved backend logic development and integration with front-end features</li>
-                        <li>Built confidence in developing tools that solve everyday productivity problems
-                        </li>
-                    </ul>
-                    </p> <br>
-
-                    <a href="https://github.com/Pritam1926/Task-Manager" class="repo" target="_blank"><i
-                            class="fa-brands fa-github"></i> GitHub Repo</a>
-                    <a href="demo.html" class="repo" style="background-color: #F29111; color: #111827;"
-                        target="_blank">Live Demo</a>
-                </div>
-            </div>
-
-            <!-- Number System Calculator -->
-            <div class="project-card">
-                <img src="./img/pro3.png" alt="project-img">
-                <div class="project-details">
-                    <h3>Number System Calculator <span class="type" style="background-color: #667eea;">Personal</span>
-                    </h3>
-
-                    <span class="team"><i class="fa-solid fa-calendar"></i> Feb 2025</span> <br>
-
-                    <span class="team"><i class="fa-solid fa-people-line"></i> Individual</span>
-
-                    <p class="purpose">Purpose: To simplify and visualize number system conversions, complement
-                        operations, and arithmetic calculations for learners in CS and electronics fields.</p>
-
-                    <p class="description">The Number System Calculator is an educational web application designed to
-                        assist users in understanding and performing operations related to digital number systems. The
-                        tool supports conversion between binary, decimal, octal, and hexadecimal systems. It also
-                        includes functionalities to calculate 1’s and 2’s complements of binary numbers and perform
-                        arithmetic operations like addition, subtraction, multiplication, and division across different
-                        bases. <br>
-
-                        This project serves as a practical aid for students studying computer architecture, digital
-                        logic, and programming fundamentals.
-
-                    </p>
-
-                    <h4>
-                        <> Tech Stack
-                    </h4>
-                    <div class="tech-stack">
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                        <span class="js">JavaScript</span>
+                    <!-- project 3 -->
+                    <div
+                        class="project-card group bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 transition-all duration-300 flex flex-col">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10">
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="AI chat application user interface design"
+                                style="background-image: url('img/pro5.png');">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">HTML</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">CSS</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">PHP</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">MySQL</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">May 2025</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">groups</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Individual</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Task Manager</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                                It focuses on creating a private workspace for each user to track, update, and organize
+                                tasks without interference — useful for students, professionals, or small teams.
+                            </p>
+                            <div class="flex gap-3 mt-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1 glow-button bg-primary text-white h-10 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center">Live
+                                    Demo</a>
+                                <a href="https://github.com/Pritam1926/Task-Manager" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="px-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/5 h-10 rounded-lg text-slate-600 dark:text-slate-300 transition-all flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px] align-middle">code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-
-                    <h4>Role & Contribution</h4>
-                    <p class="responsibility">
-                        I independently designed and developed this entire project as a static web application using
-                        only frontend technologies. My responsibilities included:
-                    <ul>
-                        <li>Creating an intuitive and clean user interface for inputs and results.</li>
-                        <li>I Writing custom logic for number system conversions (Binary ↔ Decimal ↔ Octal ↔ Hex).</li>
-                        <li>Implementing algorithms for 1’s and 2’s complement calculations.</li>
-                        <li>Adding arithmetic operation support in binary and other number systems.</li>
-                        <li>Ensuring responsive design for both desktop and mobile users.</li>
-                    </ul>
-                    </p>
-
-                    <h4>Challenges Fased</h4>
-                    <ul>
-                        <li>Writing accurate conversion and arithmetic logic without using external libraries</li>
-                        <li>Ensuring the correctness of complement calculations in all binary cases</li>
-                        <li>Designing a clean, non-confusing UI for multiple input/output options</li>
-                    </ul>
-
-                    <h4>Learning Outomes</h4>
-                    <p class="outcome">
-                    <ul>
-                        <li>Strengthened my understanding of binary, octal, decimal, and hexadecimal number systems</li>
-                        <li>Improved logical thinking by implementing conversion and complement algorithms manually</li>
-                        <li>Gained confidence in building standalone tools using only HTML, CSS, and JavaScript</li>
-                        <li>Learned to focus on user experience by designing simple, functional UI for technical
-                            operations</li>
-                        <li>Enhanced debugging skills while ensuring calculation accuracy across various input formats
-                        </li>
-                    </ul>
-                    </p> <br>
-
-                    <a href="https://github.com/Pritam1926/Numbersystem" class="repo" target="_blank"><i
-                            class="fa-brands fa-github"></i> GitHub Repo</a>
-                    <a href="https://pritam1926.github.io/Numbersystem/" class="repo"
-                        style="background-color: #F29111; color: #111827;" target="_blank">Live Demo</a>
-                </div>
-            </div>
-
-            <!-- institute management system -->
-            <div class="project-card">
-                <img src="./img/pro2.png" alt="project-img">
-                <div class="project-details">
-                    <h3>Institute Management System <span class="type" style="background-color: #00758F;">BCA
-                            Minor</span></h3>
-
-                    <span class="team"><i class="fa-solid fa-calendar"></i> Sept 2024 - Nov 2024</span> <br>
-
-                    <span class="team"><i class="fa-solid fa-people-line"></i> Team of 2: Pritam Pandit, Tanisha
-                        Chakraborty</span>
-
-                    <p class="purpose">Purpose: o streamline and digitize academic and administrative workflows of an
-                        institute by providing role-based portals for all users, ensuring better communication,
-                        transparency, and real-time access to essential data.</p>
-
-                    <p class="description">The Institute Management System is a full-featured web-based solution
-                        designed to digitize and simplify day-to-day operations of educational institutions. This
-                        platform provides personalized portals for students, faculty, and administrators, enabling
-                        seamless access to course details, class schedules, learning materials, exam updates, attendance
-                        records, and results.
-
-                        The system also includes an admission module where new students can explore available courses
-                        and apply directly through the portal. With role-based access control and centralized data
-                        management, the platform ensures security, efficiency, and enhanced user experience for all
-                        stakeholders.
-                    </p>
-
-                    <h4>
-                        <> Tech Stack
-                    </h4>
-                    <div class="tech-stack">
-                        <span class="html">HTML</span>
-                        <span class="css">CSS</span>
-                        <span class="js">JavaScript</span>
-                        <span class="php">PHP</span>
-                        <span class="mysql">MySQL</span>
+                    <!-- project 2 -->
+                    <div
+                        class="project-card group bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 transition-all duration-300 flex flex-col">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10">
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Close-up of programming code on a monitor"
+                                style="background-image: url('img/pro3.png');">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">HTML</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">CSS</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">JavaScript</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Feb 2025</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">groups</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Individual</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Number System Calculator
+                            </h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                                To simplify and visualize number system conversions, complement operations, and
+                                arithmetic calculations for learners in CS and electronics fields.
+                            </p>
+                            <div class="flex gap-3 mt-auto">
+                                <a href="https://pritam1926.github.io/Numbersystem/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="flex-1 glow-button bg-primary text-white h-10 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center">Live
+                                    Demo</a>
+                                <a href="https://github.com/Pritam1926/Numbersystem" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="px-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/5 h-10 rounded-lg text-slate-600 dark:text-slate-300 transition-all flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px] align-middle">code</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                    <!-- project 1 -->
+                    <div
+                        class="project-card group bg-white dark:bg-card-dark rounded-xl overflow-hidden border border-slate-100 dark:border-slate-800 transition-all duration-300 flex flex-col">
+                        <div class="relative aspect-video overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10">
+                            </div>
+                            <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Modern mobile app UI design exploration"
+                                style="background-image: url('img/pro2.png');">
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">HTML</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">CSS</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">JavaScript</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">PHP</span>
+                                <span
+                                    class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary rounded-lg">MySQL</span>
+                            </div>
+                            <div class="flex flex-col gap-1 mb-4">
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Sep 2024 – Nov
+                                        2024</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-[14px]">groups</span>
+                                    <span class="text-[11px] font-semibold uppercase tracking-tight">Team
+                                        Project</span>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Institute Management
+                                System </h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+                                streamline and digitize academic and administrative workflows of an institute by
+                                providing role-based portals for all users, ensuring better communication, transparency,
+                                and real-time access to essential data.
+                            </p>
+                            <div class="flex gap-3 mt-auto">
+                                <a href="#" target="_blank" rel="noopener noreferrer"
+                                    class="flex-1 glow-button bg-primary text-white h-10 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center">Live
+                                    Demo</a>
+                                <a href="https://github.com/Pritam1926/Institute-Management-System" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="px-4 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-white/5 h-10 rounded-lg text-slate-600 dark:text-slate-300 transition-all flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-[20px] align-middle">code</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section
+                    class="max-w-6xl mx-auto px-4 py-10 md:px-8 md:py-20 bg-primary/5 rounded-3xl mb-12 border border-primary/10 text-center">
+                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Have a project in mind?</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">I'm currently available for freelance
+                        work and full-time
+                        opportunities.</p>
+                    <a href="contact.html"
+                        class="glow-button px-12 py-4 bg-primary text-white text-base font-bold rounded-xl shadow-2xl shadow-primary/40 transition-transform active:scale-95 inline-block">
+                        Contact Me
+                    </a>
+                </section>
 
-                    <h4>Role & Contribution</h4>
-                    <p class="responsibility">
-                        I was responsible for designing and implementing the backend architecture of the entire system.
-                        This included:
-                    <ul>
-                        <li>Creating secure user authentication for students, faculty, and admins.</li>
-                        <li>Developing RESTful APIs to manage course data, schedules, materials, and exam records.</li>
-                        <li>Implementing admission form handling and backend validation.</li>
-                        <li>Managing database schemas for user roles, attendance, and results.</li>
-                        <li>Ensuring data consistency, access control, and performance optimization.</li>
-                    </ul>
-                    </p>
-
-                    <h4>Challenges Fased</h4>
-                    <ul>
-                        <li>Designing a flexible database structure to handle multiple user roles with different access
-                            levels (student, faculty, admin).</li>
-                        <li>Managing secure login and session handling for each portal without data overlap.</li>
-                        <li>Handling dynamic content updates (e.g., class schedules, results) in real time.</li>
-                        <li>Ensuring scalability and performance while dealing with large student datasets.</li>
-                        <li>Coordinating with teammates for module integration and avoiding merge conflicts during
-                            development.</li>
-                        <li>Maintaining UI/UX consistency across different roles and screen sizes.</li>
-                    </ul>
-
-                    <h4>Learning Outomes</h4>
-                    <p class="outcome">
-                    <ul>
-                        <li>Gained deep understanding of backend architecture design and role-based access control.</li>
-                        <li>Improved skills in database schema modeling, CRUD operations, and form handling.</li>
-                        <li>Learned to work with secure authentication and session management.</li>
-                        <li>Enhanced collaboration and version control practices using Git & GitHub.</li>
-                        <li>Understood the full development cycle — from planning and designing to deploying and
-                            testing.</li>
-                        <li>Strengthened ability to write clean, modular code for scalable web applications.</li>
-                    </ul>
-                    </p> <br>
-
-                    <a href="https://github.com/Pritam1926/Institute-Management-System" class="repo" target="_blank"><i
-                            class="fa-brands fa-github"></i> GitHub Repo</a>
-                    <a href="demo.html" class="repo" style="background-color: #F29111; color: #111827;"
-                        target="_blank">Live Demo</a>
-                </div>
             </div>
-        </section>
-    </main>
-    <div id="include-footer"></div>
-
-    <script src="include.js"></script>
+            <portfolio-footer></portfolio-footer>
+        </main>
+    </div>
 </body>
 
 </html>

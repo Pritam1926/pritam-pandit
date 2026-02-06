@@ -1,591 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .about-hero {
-            margin-left: 300px;
-            padding: 40px;
-        }
-
-        .about-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .about-text h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .about-text h1 span {
-            color: #377dff;
-        }
-
-        .tags {
-            margin: 15px 0;
-        }
-
-        .tag {
-            background-color: #e7eefc;
-            color: #377dff;
-            padding: 6px 12px;
-            border-radius: 20px;
-            margin-right: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-
-        .about-text p {
-            font-size: 14px;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        .location {
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            color: #555;
-            font-size: 12px;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 280px;
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 80%;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        .edtech {
-            font-weight: bold;
-            text-decoration: none;
-            color: #1a1a1a;
-        }
-
-        /* my bio--------------- */
-        .journey-section {
-            margin-left: 300px;
-            padding: 40px;
-            background-color: #f4fafd;
-        }
-
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #149ddd;
-            display: inline-block;
-        }
-
-        .journey-box {
-            background-color: #ffffff;
-            border-radius: 14px;
-            padding: 25px 30px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: justify;
-            color: #444;
-        }
-
-        .journey-box p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-            border-left: 2px solid #b2b2b2;
-            padding: 0 10px;
-            border-radius: 5px;
-        }
-
-        .journey-box ul {
-            padding: 10px 40px;
-            font-size: 14px;
-            color: #555;
-        }
-
-        /* education------------- */
-
-        .education-section {
-            margin-left: 300px;
-            padding: 40px;
-        }
-
-        .section-title {
-            font-size: 30px;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #149ddd;
-            display: inline-block;
-        }
-
-        /* Timeline */
-        .timeline {
-            border-left: 3px solid #e0e0e0;
-            padding-left: 40px;
-            position: relative;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            top: 5px;
-            left: -15px;
-            width: 12px;
-            height: 12px;
-            background-color: #007bff;
-            border-radius: 50%;
-        }
-
-        .timeline-content {
-            background-color: #f9f9f9;
-            padding: 20px 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-content h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-            color: #007bff;
-        }
-
-        .timeline-content p {
-            margin: 6px 0;
-            font-size: 15px;
-        }
-
-        /* vision and mission------------------ */
-        .vm-section {
-            margin-left: 300px;
-            padding: 40px;
-            background-color: #f4fafd;
-        }
-
-        .vm-cards {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .vm-card {
-            max-width: 500px;
-            width: 100%;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: left;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all .3s ease;
-        }
-
-        .vm-card:hover {
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .mission {
-            background-image: linear-gradient(135deg, #eef4ff, #cbddff);
-        }
-
-        .vision {
-            background-image: linear-gradient(135deg, #e8fdf1, #d5ffe7);
-        }
-
-        .vm-card span {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mission span {
-            background-color: #b7cffb;
-            color: #1c5dd5;
-        }
-
-        .vision span {
-            background-color: #baf9d6;
-            color: #10a651;
-        }
-
-        .vm-card h3 {
-            margin: 10px 0;
-            font-size: 20px;
-            font-weight: 600;
-            color: #111827;
-        }
-
-        .vm-card p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* sjills----------------- */
-        .skill-section {
-            margin-left: 300px;
-            padding: 40px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .badge1 {
-            background-color: #2563eb;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .skill-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .skill-card {
-            flex: 1;
-            background: #fff;
-            border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .card-icon.code {
-            background-color: #b7cffb;
-            color: #1c5dd5;
-        }
-
-        .card-icon.frontend {
-            background-color: #f3e8ff;
-            color: #670fc4;
-        }
-
-        .card-icon.core {
-            background-color: #f9e1c2;
-            color: #c97405;
-        }
-
-        .skill-card h3 {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .skill-list li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f9fafb;
-            border-radius: 12px;
-            padding: 10px 14px;
-            margin-bottom: 10px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #1f2937;
-            transition: all .3s ease
-        }
-        .skill-list li:hover{
-            scale: 1.05;
-            background-color: #e9f4ff;
-        }
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        .green {
-            background-color: #10b981;
-        }
-
-        .yellow {
-            background-color: #f59e0b;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Pritam Pandit | Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/components.js"></script>
 </head>
 
-<body>
-    <div id="include-header"></div>
-    <main>
-        <section class="about-hero">
-            <div class="about-container">
-                <div class="about-text">
-                    <h1>Hi, I'm <span>Pritam Pandit</span></h1>
-                    <div class="tags">
-                        <span class="tag">Tech Enthusiast</span>
-                        <span class="tag">Educator</span>
-                        <span class="tag">Founder of ZodeTech</span>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased">
+    <div class="flex min-h-screen">
+        <portfolio-sidebar></portfolio-sidebar>
+        <main class="flex-1 lg:ml-72 min-h-screen overflow-y-auto custom-scrollbar">
+            <div class="max-w-5xl mx-auto px-4 py-8 md:px-10 md:py-16 space-y-20">
+                <section class="flex flex-col @container">
+                    <div
+                        class="flex flex-col md:flex-row items-center gap-12 bg-white dark:bg-card-dark p-6 md:p-10 rounded-xl border border-slate-200 dark:border-white/5 relative overflow-hidden">
+                        <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 blur-[100px] rounded-full">
+                        </div>
+                        <div class="w-full md:w-1/3 shrink-0">
+                            <div
+                                class="aspect-square rounded-xl overflow-hidden glow-accent border-2 border-primary/30">
+                                <img alt="Developer working at a clean desk setup" class="w-full h-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuALTFrkGn0oVz9RgGzRfaTpPAMG8TCzBIQrEZUGqyV9F_i-r5ycJTeFnnxzccrvfMOBSYOFdSmDgY1nnFOx7OAtvEkT2yBS6MlBBiqxprX3kTB3aLx1y3hwaSv2FOj3SK8kt-fSKdoR0n4wDSbr1rg8U6r-dOxbDqRu8FYBqCDi1Fz5zY5UWudik-vhnYYRbM7Qje9z0pk6Pe26N85DGwPcEj21Gdn0PVMG4OO--Nq-ZkCQhLUkRPTJ-v2VbpnYkawSaJJk8CDYdAai" />
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-6 relative z-10">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
+                                <span>Portfolio Spotlight</span>
+                            </div>
+                            <h2 class="text-3xl font-bold leading-tight tracking-tight">Full stack Developer,
+                                Freelancer, and <span class="text-primary">Technical Educator</span> creating modern
+                                digital experiences
+                            </h2>
+                            <p class="text-slate-600 dark:text-[#a19db9] text-lg leading-relaxed">
+                                Based in India, I create scalable web applications, deliver freelance projects, and
+                                mentor students through practical learning and real-world experience.
+                            </p>
+                            <div class="flex items-center gap-6">
+                                <div class="flex flex-col">
+                                    <span class="text-2xl font-bold">3+</span>
+                                    <span class="text-xs text-slate-500 dark:text-[#a19db9] uppercase">Years
+                                        Experience</span>
+                                </div>
+                                <div class="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
+                                <div class="flex flex-col">
+                                    <span class="text-2xl font-bold">10+</span>
+                                    <span class="text-xs text-slate-500 dark:text-[#a19db9] uppercase">Projects
+                                        Completed</span>
+                                </div>
+                                <div class="w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
+                                <button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline">
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        A passionate tech enthusiast, BCA graduate, and the founder of <a href="#"
-                            class="edtech">ZodeTech</a>, an ed-tech initiative
-                        to guide and empower aspiring developers and students.
-                    </p>
-                    <div class="location">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>West Bengal, India</span>
+                </section>
+                <section>
+                    <div class="flex items-center gap-4 mb-12">
+                        <span class="material-symbols-outlined text-primary">school</span>
+                        <h2 class="text-3xl font-bold tracking-tight">Education</h2>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="./img/fdf54baf28b29eb34ca0811f622dbdda.jpg" alt="Illustration">
-                </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div
+                            class="bg-card-dark p-6 md:p-8 rounded-2xl border-l-4 border-primary shadow-lg group hover:bg-primary/5 transition-all hover:shadow-xl hover:shadow-primary/10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="rounded-full overflow-hidden size-20 border-2 border-primary/20 shrink-0">
+                                    <img src="img/ju-img.jpg" alt="University Logo" class="w-full h-full object-cover">
+                                </div>
+                                <span
+                                    class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wider">2025
+                                    - Present</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-1">Jadavpur University</h4>
+                            <p class="text-slate-400 font-medium mb-4">Master of Computer Applications -
+                                MCA</p>
+                            <p class="text-slate-500 text-sm leading-relaxed font-bold">
+                                Grade:
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-card-dark p-6 md:p-8 rounded-2xl border-l-4 border-primary shadow-lg group hover:bg-primary/5 transition-all hover:shadow-xl hover:shadow-primary/10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="rounded-full overflow-hidden size-20 border-2 border-primary/20 shrink-0">
+                                    <img src="img/makaut.jpg" alt="College Logo" class="w-full h-full object-cover">
+                                </div>
+                                <span
+                                    class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wider">2022
+                                    - 2025</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-1">Global College of Science & Technology (MAKAUT)</h4>
+                            <p class="text-slate-400 font-medium mb-4">Bachelor of Computer Applications
+                                - BCA</p>
+                            <p class="text-slate-500 text-sm leading-relaxed font-bold">
+                                Grade: 8.7 CGPA
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-card-dark p-6 md:p-8 rounded-2xl border-l-4 border-primary shadow-lg group hover:bg-primary/5 transition-all hover:shadow-xl hover:shadow-primary/10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="rounded-full overflow-hidden size-20 border-2 border-primary/20 shrink-0">
+                                    <img src="img/wbchse.jpg" alt="School Logo" class="w-full h-full object-cover">
+                                </div>
+                                <span
+                                    class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wider">2022</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-1">Higher Secondary School</h4>
+                            <p class="text-slate-400 font-medium mb-4">Arts with Math</p>
+                            <p class="text-slate-500 text-sm leading-relaxed font-bold">
+                                Grade: 86.6%
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-card-dark p-6 md:p-8 rounded-2xl border-l-4 border-primary shadow-lg group hover:bg-primary/5 transition-all hover:shadow-xl hover:shadow-primary/10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="rounded-full overflow-hidden size-20 border-2 border-primary/20 shrink-0">
+                                    <img src="img/wbbse.jpg" alt="School Logo" class="w-full h-full object-cover">
+                                </div>
+                                <span
+                                    class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wider">2020</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-1">Secondary School</h4>
+                            <p class="text-slate-400 font-medium mb-4">General Studies</p>
+                            <p class="text-slate-500 text-sm leading-relaxed font-bold">
+                                Grade: 73.86%
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">layers</span>
+                        What I Do
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div
+                            class="p-6 md:p-8 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 rounded-xl hover:border-primary/50 transition-all group hover:shadow-xl hover:shadow-primary/10">
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary mb-6 block group-hover:scale-110 transition-transform">code</span>
+                            <h4 class="font-bold text-lg mb-3">Web Development</h4>
+                            <p class="text-sm text-slate-500 dark:text-[#a19db9] leading-relaxed">Building clean,
+                                modular, and highly scalable codebases using modern frameworks.</p>
+                        </div>
+                        <div
+                            class="p-6 md:p-8 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 rounded-xl hover:border-primary/50 transition-all group hover:shadow-xl hover:shadow-primary/10">
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary mb-6 block group-hover:scale-110 transition-transform">brush</span>
+                            <h4 class="font-bold text-lg mb-3">UI/UX Design</h4>
+                            <p class="text-sm text-slate-500 dark:text-[#a19db9] leading-relaxed">Crafting modern user
+                                interfaces with a focus on accessibility and user experience.</p>
+                        </div>
+                        <div
+                            class="p-6 md:p-8 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 rounded-xl hover:border-primary/50 transition-all group hover:shadow-xl hover:shadow-primary/10">
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary mb-6 block group-hover:scale-110 transition-transform">school</span>
+                            <h4 class="font-bold text-lg mb-3">Technical Teaching</h4>
+                            <p class="text-sm text-slate-500 dark:text-[#a19db9] leading-relaxed">Mentoring students and
+                                delivering workshops on modern web technologies and best practices.</p>
+                        </div>
+                        <div
+                            class="p-6 md:p-8 bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 rounded-xl hover:border-primary/50 transition-all group hover:shadow-xl hover:shadow-primary/10">
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary mb-6 block group-hover:scale-110 transition-transform">rocket_launch</span>
+                            <h4 class="font-bold text-lg mb-3">Freelance Projects</h4>
+                            <p class="text-sm text-slate-500 dark:text-[#a19db9] leading-relaxed">Delivering custom,
+                                high-quality digital solutions tailored to client needs and business goals.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">terminal</span>
+                        Technical Skills
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-slate-500 dark:text-[#a19db9] uppercase tracking-wider">
+                                Programming</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">C</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">C++</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Java</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Python</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-slate-500 dark:text-[#a19db9] uppercase tracking-wider">
+                                Frontend</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">HTML</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">CSS</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Tailwind
+                                    CSS</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">JavaScript</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Bootstrap</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-slate-500 dark:text-[#a19db9] uppercase tracking-wider">
+                                Backend</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">PHP</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Laravel</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">MySQL</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Firebase</span>
+
+
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-sm font-bold text-slate-500 dark:text-[#a19db9] uppercase tracking-wider">
+                                Design &amp; Tools</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Git/GitHub</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Figma</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Canva</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Power
+                                    Bi</span>
+                                <span
+                                    class="px-3 py-1.5 rounded-lg bg-white dark:bg-card-dark border border-slate-200 dark:border-white/5 text-sm hover:border-primary/50 transition-colors">Core
+                                    CS</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="pb-20">
+                    <div
+                        class="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-10">
+                        <div class="w-full md:w-48 shrink-0">
+                            <a href="img/Pritam_cv.pdf" target="_blank" class="block w-full h-full group relative">
+                                <div
+                                    class="bg-white dark:bg-slate-800 p-4 rounded-lg shadow-2xl rotate-2 group-hover:rotate-0 transition-transform cursor-pointer relative h-full">
+                                    <div
+                                        class="w-full aspect-[3/4] bg-slate-100 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-700 p-4 space-y-2 pointer-events-none">
+                                        <div class="h-2 w-2/3 bg-slate-300 dark:bg-slate-700 rounded"></div>
+                                        <div class="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded"></div>
+                                        <div class="h-2 w-5/6 bg-slate-200 dark:bg-slate-800 rounded"></div>
+                                        <div class="h-12 w-full bg-slate-300/50 dark:bg-slate-700/50 rounded mt-4">
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                                        <span class="material-symbols-outlined text-white text-4xl">visibility</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="flex-1 space-y-4 text-center md:text-left">
+                            <h3 class="text-3xl font-bold">Interested in my full profile?</h3>
+                            <p class="text-slate-600 dark:text-[#a19db9]">Check out my detailed Curriculum Vitae for a
+                                deep dive into my professional background, certifications, and technical journey.</p>
+                            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                                <a href="img/Pritam_cv.pdf" download
+                                    class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-bold transition-all shadow-lg shadow-primary/20">
+                                    <span class="material-symbols-outlined">download</span>
+                                    <span>Download CV</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+            <portfolio-footer></portfolio-footer>
+        </main>
+    </div>
 
-        <section class="journey-section">
-            <h2 class="section-title">My Journey</h2>
-            <div class="journey-box">
-                <p>
-                    My academic path started at the <strong>secondary and higher secondary</strong> levels, where I
-                    built a strong
-                    foundation in <strong>mathematics and computer science</strong>. This academic base laid the
-                    groundwork for my
-                    journey into the world of technology. <br>
-
-                    I have recently graduated with <strong>Bachelor of Computer Applications (BCA)</strong> from<strong>
-                        Global College of Science & Technology</strong> under
-                    <strong>MAKAUT (2022–2025)</strong>. I consistently ranked <strong>top 3</strong> in all semesters,
-                    earning the distinction of <strong>Batch
-                        Topper</strong> with an overall <strong>CGPA of 8.7</strong>. <br>
-
-                    As an aspiring postgraduate, I am now preparing for my <strong>Master of Computer Applications
-                        (MCA)</strong> to
-                    further strengthen my academic and technical capabilities.
-                </p><br><br>
-
-                <p>
-                    Throughout my academic and practical experiences, I have developed expertise in a range of
-                    technologies and tools:
-                <ul>
-                    <li>💻 <strong>Programming Languages:</strong> C, C++, Java, Python</li>
-                    <li>🌐 <strong>Frontend Development:</strong> HTML, CSS, JavaScript</li>
-                    <li>🛠️ <strong>Backend Development:</strong> PHP, MySQL</li>
-                    <li>📊 <strong>Data Analytics & BI:</strong> Power BI, Data Visualization</li>
-                    <li>🧱 <strong>Core CS Concepts:</strong> DSA, OOP, DBMS, Networking, COA, Software Engineering, OS,
-                        Cyber Security
-                    </li>
-                </ul>
-                </p><br><br>
-
-                <p>
-                    To gain real-world exposure and technical depth, I’ve participated in several industry-focused
-                    programs:
-                <ul>
-                    <li>✅ <strong>Internship at WEBEL —</strong> Worked on Data Analytics & Business Intelligence</li>
-                    <li>🧪 <strong>Research Presentation at FOSET —</strong> Contributed to research in applied
-                        technology</li>
-                    <li>🐍 <strong>Python Workshop at IIT Kharagpur —</strong> Participated in an Advanced Python & Tech
-                        Workshop</li>
-                </ul>
-                </p><br><br>
-
-                <p>
-                    Beyond academics, I’ve channeled my passion for education into action.
-
-                    I’m the <strong>founder of ZodeTech</strong>, an EdTech initiative dedicated to providing
-                    <em>quality tuition, free
-                        mentorship, and career guidance to CS/IT students.</em>
-                    Over the past <strong>3 years</strong>, I’ve taught and mentored numerous students — from <em>BCA,
-                        B.Tech, and other
-                        backgrounds</em> — helping them master programming, crack internships, and build strong tech
-                    careers. <br>
-
-                    At <strong>ZodeTech</strong>, we focus on:
-                <ul>
-                    <li>📚 Semester-wise Tuition for MAKAUT and other universities</li>
-                    <li>💬 Crash Courses on key technical topics</li>
-                    <li>🔎 Career Guidance & Roadmap Planning</li>
-                    <li>🧑‍💻 Project Support & Interview Prep</li>
-                </ul>
-                </p><br><br>
-                <p>
-                    As a full-stack web developer and tech enthusiast, I regularly work on projects involving:
-                <ul>
-                    <li>Frontend and backend integration</li>
-                    <li>Clean UI/UX design</li>
-                    <li>Scalable database architecture</li>
-                    <li>Real-time analytics & dashboards</li>
-                </ul>
-                </p>
-            </div>
-        </section>
-
-        <section class="education-section">
-            <h2 class="section-title">Education</h2>
-
-            <div class="timeline">
-                <!-- BCA -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3><span class="edu-year">2022 – 2025</span> • Bachelor of Computer Applications</h3>
-                        <p>Global College of Science & Technology, MAKAUT University</p>
-                        <p><strong>CGPA: 8.7</strong></p>
-                    </div>
-                </div>
-
-                <!-- HS -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3><span class="edu-year">2022</span> • Higher Secondary</h3>
-                        <p>West Bengal Council of Higher Secondary Education</p>
-                        <p><strong>Percentage: 86.60%</strong></p>
-                    </div>
-                </div>
-
-                <!-- Secondary -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3><span class="edu-year">2020</span> • Secondary Education</h3>
-                        <p>West Bengal Board of Secondary Education</p>
-                        <p><strong>Percentage: 73.85%</strong></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="vm-section">
-            <h2 class="section-title">Mission & Vision</h2>
-            <div class="vm-cards">
-                <!-- Mission Card -->
-                <div class="vm-card mission">
-                    <span><i class="fa-solid fa-bullseye"></i></span>
-                    <h3>Mission</h3>
-                    <p>
-                        Democratize quality tech education and build real-world developers through ZodeTech. I believe
-                        in making programming accessible to everyone, regardless of their background, and providing
-                        practical skills that translate directly to industry success.
-                    </p>
-                </div>
-
-                <!-- Vision Card -->
-                <div class="vm-card vision">
-                    <span><i class="fa-solid fa-eye"></i></span>
-                    <h3>Vision</h3>
-                    <p>
-                        Build a global tech-learning ecosystem where learners evolve into confident creators and
-                        innovators. My goal is to create a community where knowledge sharing and practical application
-                        drive technological advancement and career growth.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="skill-section">
-            <div class="header">
-                <h2 class="section-title">Technical Expertise</h2>
-                <div class="badge1">3+ Years Teaching Experience</div>
-            </div>
-
-            <div class="skill-cards">
-                <!-- Programming Languages -->
-                <div class="skill-card">
-                    <div class="card-icon code">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3>Programming Languages</h3>
-                    <ul class="skill-list">
-                        <li>JavaScript <span class="dot green"></span></li>
-                        <li>PHP <span class="dot green"></span></li>
-                        <li>Python <span class="dot green"></span></li>
-                        <li>Java <span class="dot yellow"></span></li>
-                        <li>C <span class="dot yellow"></span></li>
-                        <li>C++ <span class="dot yellow"></span></li>
-                    </ul>
-                </div>
-
-                <!-- Frontend & Tools -->
-                <div class="skill-card">
-                    <div class="card-icon frontend">
-                        <i class="fa-solid fa-toolbox"></i>
-                    </div>
-                    <h3>Frontend & Tools</h3>
-                    <ul class="skill-list">
-                        <li>HTML <span class="dot green"></span></li>
-                        <li>CSS <span class="dot green"></span></li>
-                        <li>Tailwindcss <span class="dot green"></span></li>
-                        <li>MySQL <span class="dot yellow"></span></li>
-                        <li>Power BI <span class="dot yellow"></span></li>
-                    </ul>
-                </div>
-
-                <!-- Core CS Concepts -->
-                <div class="skill-card">
-                    <div class="card-icon core">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <h3>Core CS Concepts</h3>
-                    <ul class="skill-list">
-                        <li>OOP <span class="dot green"></span></li>
-                        <li>DSA <span class="dot green"></span></li>
-                        <li>DBMS <span class="dot green"></span></li>
-                        <li>Operating Systems <span class="dot green"></span></li>
-                        <li>Cyber Security <span class="dot yellow"></span></li>
-                        <li>Networking <span class="dot yellow"></span></li>
-                        <li>COA <span class="dot yellow"></span></li>
-                        <li>Software Engineering <span class="dot yellow"></span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-    <div id="include-footer"></div>
-
-    <script src="include.js"></script>
 </body>
 
 </html>
